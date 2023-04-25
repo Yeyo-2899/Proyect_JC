@@ -1,0 +1,71 @@
+//Este archivo contiene variables las cuales almacenan datos necesarios en diferentes reglas de estilo de la página
+//así se facilita la implementación de estos datos cuando sean necesarios
+
+
+//Font Family
+$ff: 'Poppins', sans-serif;
+
+//Font Weight
+$fw-lig: 300; 
+$fw-reg: 400; 
+$fw-med: 500; 
+$fw-sem: 600; 
+$fw-bol: 700; 
+$fw-ext: 800; 
+
+//Colors
+$red: #d82d41;
+$black: #2d2d2d;
+$grey: #8b8b8b;
+$white: #f2f2f2;
+
+//Transparencies
+$trans-N1: rgba(0,0,0,.35);
+$trans-N2: rgba(0,0,0,.4);
+$trans-N3: rgba(0,0,0,.45);
+$trans-N4: rgba(0,0,0,.55);
+$trans-R1: rgba(0,0,0,.5);
+
+//Font Size
+$fs-xxxsm: 1.331rem; //16pt
+$fs-xxsm: 1.5rem; //18pt
+$fs-xsm: 1.667rem; //20pt
+$fs-sm: 2rem; //24pt
+$fs-med: 2.5rem; //30pt
+$fs-big: 2.833rem; //34pt
+$fs-lg: 3rem; //36pt
+$fs-xlg: 3.333rem; //40pt
+$fs-xxlg: 3.667rem; //44pt
+$fs-xxxlg: 9.166rem; //110pt
+
+//Margin
+$m-1: .469rem; //7.5px
+$m-2: .938rem; //15px
+$m-3: 1.875rem; //30px
+$m-4: 3.75rem; //60px
+$m-5: 7.5rem; //120px
+$m-6: 8.125rem; //130px
+$m-7: 11.25rem; //180px
+$m-8: 11.875rem; //190px
+$m-9: 22.5rem; //360px
+
+//Padding
+$p-1: .469rem; //7.5px
+$p-2: .938rem; //15px
+$p-3: 1.875rem; //30px
+$p-4: 3.75rem; //60px
+$p-5: 7.5rem; //120px
+$p-6: 8.125rem; //130px
+$p-7: 11.25rem; //180px
+$p-8: 11.875rem; //190px
+$p-9: 22.5rem; //360px
+
+//Radius
+$r-1: .625rem; //10px
+$r-2: .938rem; //15px
+$r-3: 1.25rem; //20px
+$r-4: 2.5rem; //40px
+
+//Gaps
+$g-1: .469rem; //7.5px
+$g-2: .938rem; //15px
