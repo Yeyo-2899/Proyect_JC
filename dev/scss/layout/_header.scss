@@ -1,0 +1,38 @@
+//Este archivo contiene las reglas de estilo del nav que se utilizará para la pagina
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+
+
+.nav{
+    @include mixins.row();
+    justify-content: space-between;
+    margin: vars.$m-2 vars.$m-4;
+    position: absolute;
+}
+
+.nav-items{
+    @include mixins.row();
+    list-style: none;
+    gap: vars.$g-4;
+}
+
+.nav-icons{
+    @include mixins.row();
+    margin-left: vars.$m-6;
+    gap: vars.$g-2;
+}
+
+.nav-icon{
+    @include mixins.set-icon-button(vars.$fs-xxsm);
+}
+
+.nav-item{
+    @include mixins.set-font(vars.$fs-xxsm, vars.$fw-lig);
+}
+
+.logo{
+    @include mixins.set-font(vars.$fs-xlg, vars.$fw-ext, vars.$red);
+    &:hover{
+        color: vars.$red;
+    }
+}

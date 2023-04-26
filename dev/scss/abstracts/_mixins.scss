@@ -1,0 +1,30 @@
+//En este archivo se encuentran todos los mixins utilizados para brindar reglas a lo largo de la pagina
+@use './vars';
+
+
+@mixin row(){
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+@mixin set-font($size : vars.$fs-xxxsm, $weight : vars.$fw-lig, $color : vars.$black){
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    text-decoration: none;
+}
+
+@mixin set-button(){
+
+}
+
+@mixin set-icon-button($size){
+    font-size: $size;
+    border: none;
+    background: transparent;
+    &:hover{
+        color: vars.$red;
+        cursor: pointer;
+    }
+}
