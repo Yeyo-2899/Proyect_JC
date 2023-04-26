@@ -1,0 +1,10 @@
+//Este archivo contiene reglas de estilo base que se aplicarán a todos los archivos html a los cuales este sea vinculado
+@use '../abstracts/vars';
+
+body{
+    font-family: vars.$ff;
+    color: vars.$black;
+    background: vars.$white;
+    margin: 0;
+    scroll-behavior: smooth;
+}
