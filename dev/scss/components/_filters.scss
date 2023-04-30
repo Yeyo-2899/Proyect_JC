@@ -1,0 +1,40 @@
+//Este archivo contiene las reglas de estilo de la barra de busqueda que se utilizará en la aplicación
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+
+
+.filter-box{
+    @include mixins.set-card-shape(vars.$r-2, vars.$trans-N4);
+    @include mixins.set-transform(0);
+    padding: vars.$p-3;
+    width: 25rem;
+}
+
+.filter-box.active{
+    @include mixins.set-transform(1);
+}
+
+.filter-title{
+    @include mixins.set-font(vars.$fs-xxsm, vars.$fw-sem, vars.$white);
+    margin: 0 0 vars.$m-2 0;
+}
+
+.filter-list{
+    list-style: none;
+    margin: 0;
+    margin-bottom: vars.$m-2;
+
+}
+
+.filter-list-item{
+    margin-bottom: vars.$m-1;
+}
+
+.filter{
+    @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-lig, vars.$white);
+    text-decoration: none;
+    &:hover{
+        @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-lig, vars.$red);
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,32 @@
+//Este archivo contiene las reglas de estilo de la barra de busqueda que se utilizará en la aplicación
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+
+.search-form{
+    @include mixins.row();
+    @include mixins.set-card-shape(vars.$r-2, vars.$trans-N1);
+    @include mixins.set-transform(0); //Se debe cambiar a 0 para desaparecerlo
+    width: 25rem;
+    padding: vars.$p-2 vars.$p-3;
+    justify-content: space-between;
+}
+
+.search-form.active{
+    @include mixins.set-transform(1);
+}
+
+.search-input{
+    @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-lig, vars.$white);
+    @include mixins.set-card-shape(0, vars.$trans-N0);
+    text-transform: none;
+    border: none;
+}
+
+.search-icons{
+    @include mixins.row();
+    gap: vars.$g-1;
+}
+
+.search-icon{
+    @include mixins.set-icon-button(vars.$fs-xxxsm);
+}

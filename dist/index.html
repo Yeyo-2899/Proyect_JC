@@ -23,21 +23,65 @@
 
 </head>
 <body>
-    <nav class="nav">
-        <a href="#" class="logo">JUSTCOOK</a>
-        <ul class="nav-items">
-            <li><a href="" class="nav-item">Recetario</a></li>
-            <li><a href="" class="nav-item">Descripción</a></li>
-            <li><a href="" class="nav-item">Más Votadas</a></li>
-            <li><a href="" class="nav-item">Info.</a></li>
-        </ul>
-        <div class="nav-icons">
-            <button class="nav-icon"><p class="fa-solid fa-magnifying-glass"></p></button>
-            <button class="nav-icon"><p class="fa-solid fa-user"></p></button>
-            <!--<button class="nav-icon"><p class="fa-solid fa-bars"></p></button>-->
-        </div>
-    </nav>
+    <!--Header-->
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">JUSTCOOK</a>
+            <ul class="nav-items">
+                <li><a href="" class="nav-item">Recipe Book</a></li>
+                <li><a href="#description" class="nav-item">Description</a></li>
+                <li><a href="#votes" class="nav-item">Most Voted</a></li>
+                <li><a href="#footer" class="nav-item">Info</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button id="search-dropdown" class="nav-icon"><p class="fa-solid fa-magnifying-glass"></p></button>
+                <button id="user-dropdown" class="nav-icon"><p class="fa-solid fa-user"></p></button>
+                <button id="menu-btn" class="nav-icon"><p class="fa-solid fa-bars"></p></button>
+            </div>
+            <div class="nav-search">
+                <form class="search-form" action="" role="search">
+                    <input class="search-input" type="search" id="search-input" placeholder="Search..." aria-label="Search">
+                    <div class="search-icons">
+                        <button id="filter-btn" class="search-icon fa-solid fa-filter"></button>
+                        <button id="search-btn" for="search-box" class="search-icon fa-solid fa-search" type="submit"></button>
+                    </div>
+                </form>
+                <div class="filter-box">
+                        <h3 class="filter-title">Complexity</h3>
+                        <ul class="filter-list">
+                            <li class="filter-list-item"><a href="" class="filter">Easy</a></li>
+                            <li class="filter-list-item"><a href="" class="filter">Intermediate</a></li>
+                            <li class="filter-list-item"><a href="" class="filter">Advanced</a></li>
+                        </ul>
+                        <h3 class="filter-title">Categories</h3>
+                        <ul class="filter-list">
+                            <li class="filter-list-item"><a href="" class="filter">Breakfast</a></li>
+                            <li class="filter-list-item"><a href="" class="filter">Drinks</a></li>
+                            <li class="filter-list-item"><a href="" class="filter">Starter</a></li>
+                            <li class="filter-list-item"><a href="" class="filter">Lunch</a></li>
+                            <li class="filter-list-item"><a href="" class="filter">Desserts</a></li>
+                            <li class="filter-list-item"><a href="" class="filter">Soups</a></li>
+                        </ul>
+                        <h3 class="filter-title">Occasions</h3>
+                        <ul class="filter-list">
+                            <li class="filter-list-item"><a href="" class="filter">All</a></li>
+                            <li class="filter-list-item"><a href="" class="filter">Birthday</a></li>
+                            <li class="filter-list-item"><a href="" class="filter">Father's day</a></li>
+                            <li class="filter-list-item"><a href="" class="filter">Mother's Day</a></li>
+                            <li class="filter-list-item"><a href="" class="filter">Children's Day</a></li>
+                            <li class="filter-list-item"><a href="" class="filter">Christmas</a></li>
+                            <li class="filter-list-item"><a href="" class="filter">Easter</a></li>
+                            <li class="filter-list-item"><a href="" class="filter">Summer</a></li>
+                        </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--Header-->
 
 
+    <!--Header js-->
+    <script src="./js/header.js"></script>
+    <!--Header js-->
 </body>
 </html>

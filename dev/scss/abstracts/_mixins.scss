@@ -15,12 +15,38 @@
     text-decoration: none;
 }
 
+@mixin set-position($position, $fst : 0, $snd : 0, $trd : 0, $z-i : 0){
+    @if($position == fixed){
+        position: fixed;
+        top: $fst;
+        left: $snd;
+        right: $trd;
+        z-index: $z-i;
+    } @else if($position == absolute){
+        position: absolute;
+        top: $fst;
+        right: $snd;
+    }
+}
+
+@mixin set-card-shape($br : vars.$r-2, $bg-color : vars.$white){
+    background: $bg-color;
+    border-radius: $br;
+}
+
+@mixin set-transform($scale : 0){
+    transform: scaleY($scale);
+    transform-origin: top;
+    transition: .2s;
+}
+
 @mixin set-button(){
 
 }
 
-@mixin set-icon-button($size){
+@mixin set-icon-button($size, $color : vars.$white){
     font-size: $size;
+    color: $color;
     border: none;
     background: transparent;
     &:hover{
