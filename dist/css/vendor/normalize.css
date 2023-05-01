@@ -310,3 +310,16 @@ template {
 [hidden] {
   display: none;
 }
+
+/* Oculta el scroll bar en todos los navegadores */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background-color: transparent;
+}
+
+/* Asegura que el scroll bar sea invisible en Mozilla Firefox */
+* {
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+}

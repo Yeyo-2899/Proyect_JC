@@ -6,3 +6,12 @@
 @use '../components/filters';
 @use '../components/user-box';
 @import url(../vendor/normalize.css);
+
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(../../../dist/img/home.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}

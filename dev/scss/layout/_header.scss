@@ -24,6 +24,7 @@
     @include mixins.row();
     list-style: none;
     padding: 0;
+    margin-right: vars.$m-7;
     gap: vars.$g-4;
 }
 

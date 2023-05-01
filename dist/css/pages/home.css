@@ -2,7 +2,7 @@
 body {
   font-family: "Poppins", sans-serif;
   color: #2d2d2d;
-  background: #f2f2f2;
+  background: #f8f8f8;
   margin: 0;
   scroll-behavior: smooth;
 }
@@ -65,6 +65,7 @@ body {
           flex-direction: row;
   list-style: none;
   padding: 0;
+  margin-right: 11.25rem;
   gap: 3.75rem;
 }
 
@@ -154,7 +155,7 @@ body {
 .search-input {
   font-size: 1.331rem;
   font-weight: 300;
-  color: #f2f2f2;
+  color: #f8f8f8;
   text-decoration: none;
   background: rgba(0, 0, 0, 0);
   border-radius: 0;
@@ -181,7 +182,7 @@ body {
 
 .search-icon {
   font-size: 1.331rem;
-  color: #f2f2f2;
+  color: #f8f8f8;
   border: none;
   background: transparent;
 }
@@ -215,7 +216,7 @@ body {
 .filter-title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #f2f2f2;
+  color: #f8f8f8;
   text-decoration: none;
   margin: 0 0 0.938rem 0;
 }
@@ -233,7 +234,7 @@ body {
 .filter {
   font-size: 1.331rem;
   font-weight: 300;
-  color: #f2f2f2;
+  color: #f8f8f8;
   text-decoration: none;
   text-decoration: none;
 }
@@ -249,7 +250,7 @@ body {
   position: absolute;
   top: 6.25rem;
   right: 3.75rem;
-  background: #f2f2f2;
+  background: #f8f8f8;
   border-radius: 0.938rem;
   box-shadow: -5px 5px 20px -1px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: -5px 5px 20px -1px rgba(0, 0, 0, 0.1);
@@ -310,4 +311,17 @@ body {
 .option-icon:hover:hover {
   color: #d82d41;
   cursor: pointer;
+}
+
+.home {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url(../../../dist/img/home.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
 }
