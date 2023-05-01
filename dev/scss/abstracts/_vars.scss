@@ -21,10 +21,11 @@ $white: #f2f2f2;
 
 //Transparencies
 $trans-N0: rgba(0,0,0,0);
-$trans-N1: rgba(0,0,0,.35);
-$trans-N2: rgba(0,0,0,.4);
-$trans-N3: rgba(0,0,0,.45);
-$trans-N4: rgba(0,0,0,.55);
+$trans-N1: rgba(0,0,0,.10);
+$trans-N2: rgba(0,0,0,.35);
+$trans-N3: rgba(0,0,0,.4);
+$trans-N4: rgba(0,0,0,.45);
+$trans-N5: rgba(0,0,0,.55);
 $trans-R1: rgba(0,0,0,.5);
 
 //Font Size
@@ -60,6 +61,19 @@ $p-6: 8.125rem; //130px
 $p-7: 11.25rem; //180px
 $p-8: 11.875rem; //190px
 $p-9: 22.5rem; //360px
+
+//Spacing
+$s-1: .469rem; //7.5px
+$s-2: .938rem; //15px
+$s-3: 1.875rem; //30px
+$s-4: 3.75rem; //60px
+$s-5: 6.25rem; //100px
+$s-6: 7.5rem; //120px
+$s-7: 8.125rem; //130px
+$s-8: 11.25rem; //180px
+$s-9: 11.875rem; //190px
+$s-10: 22.5rem; //360px
+$s-11: 50rem; //800px
 
 //Radius
 $r-1: .625rem; //10px

@@ -1,0 +1,39 @@
+//Este archivo contiene las reglas de estilo del card que muestre opciones para el usuario durente la aplicación
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+
+
+.user-box{
+    @include mixins.set-position(absolute, vars.$s-5, vars.$s-4);
+    @include mixins.set-card-shape(vars.$r-2, vars.$white, vars.$trans-N1);
+    @include mixins.set-transform();
+    padding: vars.$p-1 vars.$p-3;
+}
+
+.user-box.active{
+    @include mixins.set-transform(0);
+}
+
+.options-list{
+    list-style: none;
+    padding: 0;
+}
+
+.options-list-item{
+    @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-lig);
+    margin-bottom: vars.$m-2; 
+    &:hover{
+        @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-lig, vars.$red);
+        cursor: pointer;
+    }
+}
+
+.option-icon{
+    @include mixins.set-icon-button(vars.$fs-xxxsm, vars.$black);
+    margin: 0;
+    margin-right: vars.$m-2;
+    &:hover{
+        @include mixins.set-icon-button(vars.$fs-xxxsm, vars.$red);
+        cursor: pointer;
+    }
+}

@@ -26,26 +26,34 @@
     <!--Header-->
     <header class="header">
         <nav class="nav">
+            <!--Logo-->
             <a href="#" class="logo">JUSTCOOK</a>
+
+            <!--Nav Options-->
             <ul class="nav-items">
                 <li><a href="" class="nav-item">Recipe Book</a></li>
                 <li><a href="#description" class="nav-item">Description</a></li>
                 <li><a href="#votes" class="nav-item">Most Voted</a></li>
                 <li><a href="#footer" class="nav-item">Info</a></li>
             </ul>
+
+            <!--Nav Icons-->
             <div class="nav-icons">
                 <button id="search-dropdown" class="nav-icon"><p class="fa-solid fa-magnifying-glass"></p></button>
                 <button id="user-dropdown" class="nav-icon"><p class="fa-solid fa-user"></p></button>
                 <button id="menu-btn" class="nav-icon"><p class="fa-solid fa-bars"></p></button>
             </div>
+
+            <!--Search Bar-->
             <div class="nav-search">
                 <form class="search-form" action="" role="search">
                     <input class="search-input" type="search" id="search-input" placeholder="Search..." aria-label="Search">
                     <div class="search-icons">
-                        <button id="filter-btn" class="search-icon fa-solid fa-filter"></button>
+                        <label id="filter-btn" class="search-icon fa-solid fa-filter"></label> <!--Fue necesrio cambiar esta etiqueta de button a label ya que al estar dentro de un form actualizaba la página env ez de desplegar los filtros-->
                         <button id="search-btn" for="search-box" class="search-icon fa-solid fa-search" type="submit"></button>
                     </div>
                 </form>
+
                 <div class="filter-box">
                         <h3 class="filter-title">Complexity</h3>
                         <ul class="filter-list">
@@ -74,6 +82,15 @@
                             <li class="filter-list-item"><a href="" class="filter">Summer</a></li>
                         </ul>
                 </div>
+            </div>
+
+            <!--User Options-->
+            <div class="user-box">
+                <ul class="options-list">
+                    <li class="options-list-item"><p class="option-icon fa-solid fa-user"></p><a href=""></a>My Profile</li>
+                    <li class="options-list-item"><p class="option-icon fa-solid fa-folder"></p><a href=""></a>My Collection</li>
+                    <li class="options-list-item"><p class="option-icon fa-solid fa-right-from-bracket"></p><a href=""></a>Log Out</li>
+                </ul>
             </div>
         </nav>
     </header>

@@ -32,9 +32,6 @@ body {
   text-decoration: none;
   margin-left: 3.75rem;
 }
-.logo:hover {
-  color: #d82d41;
-}
 
 .nav {
   display: -webkit-box;
@@ -112,8 +109,8 @@ body {
 
 .nav-search {
   position: absolute;
-  top: 7.5rem;
-  right: 1.875rem;
+  top: 6.25rem;
+  right: 3.75rem;
 }
 
 #menu-btn {
@@ -133,13 +130,14 @@ body {
           flex-direction: row;
   background: rgba(0, 0, 0, 0.35);
   border-radius: 0.938rem;
-  -webkit-transform: scaleY(0);
-          transform: scaleY(0);
-  -webkit-transform-origin: top;
-          transform-origin: top;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  width: 25rem;
+  box-shadow: -5px 5px 20px -1px 0;
+  -webkit-box-shadow: -5px 5px 20px -1px 0;
+  -moz-box-shadow: -5px 5px 20px -1px 0;
+  -webkit-transform: translate(50rem);
+          transform: translate(50rem);
+  -webkit-transition: 0.65s ease;
+  transition: 0.65s ease;
+  width: 22.5rem;
   padding: 0.938rem 1.875rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -147,12 +145,10 @@ body {
 }
 
 .search-form.active {
-  -webkit-transform: scaleY(1);
-          transform: scaleY(1);
-  -webkit-transform-origin: top;
-          transform-origin: top;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  -webkit-transition: 0.65s ease;
+  transition: 0.65s ease;
 }
 
 .search-input {
@@ -162,6 +158,9 @@ body {
   text-decoration: none;
   background: rgba(0, 0, 0, 0);
   border-radius: 0;
+  box-shadow: -5px 5px 20px -1px 0;
+  -webkit-box-shadow: -5px 5px 20px -1px 0;
+  -moz-box-shadow: -5px 5px 20px -1px 0;
   text-transform: none;
   border: none;
 }
@@ -194,23 +193,23 @@ body {
 .filter-box {
   background: rgba(0, 0, 0, 0.55);
   border-radius: 0.938rem;
-  -webkit-transform: scaleY(0);
-          transform: scaleY(0);
-  -webkit-transform-origin: top;
-          transform-origin: top;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  box-shadow: -5px 5px 20px -1px 0;
+  -webkit-box-shadow: -5px 5px 20px -1px 0;
+  -moz-box-shadow: -5px 5px 20px -1px 0;
+  -webkit-transform: translate(50rem);
+          transform: translate(50rem);
+  -webkit-transition: 0.65s ease;
+  transition: 0.65s ease;
   padding: 1.875rem;
-  width: 25rem;
+  margin-top: 0.938rem;
+  width: 22.5rem;
 }
 
 .filter-box.active {
-  -webkit-transform: scaleY(1);
-          transform: scaleY(1);
-  -webkit-transform-origin: top;
-          transform-origin: top;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  -webkit-transition: 0.65s ease;
+  transition: 0.65s ease;
 }
 
 .filter-title {
@@ -243,5 +242,72 @@ body {
   font-weight: 300;
   color: #d82d41;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.user-box {
+  position: absolute;
+  top: 6.25rem;
+  right: 3.75rem;
+  background: #f2f2f2;
+  border-radius: 0.938rem;
+  box-shadow: -5px 5px 20px -1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: -5px 5px 20px -1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: -5px 5px 20px -1px rgba(0, 0, 0, 0.1);
+  -webkit-transform: translate(50rem);
+          transform: translate(50rem);
+  -webkit-transition: 0.65s ease;
+  transition: 0.65s ease;
+  padding: 0.469rem 1.875rem;
+}
+
+.user-box.active {
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  -webkit-transition: 0.65s ease;
+  transition: 0.65s ease;
+}
+
+.options-list {
+  list-style: none;
+  padding: 0;
+}
+
+.options-list-item {
+  font-size: 1.331rem;
+  font-weight: 300;
+  color: #2d2d2d;
+  text-decoration: none;
+  margin-bottom: 0.938rem;
+}
+.options-list-item:hover {
+  font-size: 1.331rem;
+  font-weight: 300;
+  color: #d82d41;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.option-icon {
+  font-size: 1.331rem;
+  color: #2d2d2d;
+  border: none;
+  background: transparent;
+  margin: 0;
+  margin-right: 0.938rem;
+}
+.option-icon:hover {
+  color: #d82d41;
+  cursor: pointer;
+}
+.option-icon:hover {
+  font-size: 1.331rem;
+  color: #d82d41;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.option-icon:hover:hover {
+  color: #d82d41;
   cursor: pointer;
 }

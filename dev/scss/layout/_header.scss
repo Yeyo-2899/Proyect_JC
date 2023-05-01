@@ -4,15 +4,12 @@
 
 .header{
     @include mixins.row();
-    @include mixins.set-position(fixed, vars.$m-4, 0, 0, 1000);
+    @include mixins.set-position(fixed, vars.$s-4, 0, 0, 1000);
 }
 
 .logo{
     @include mixins.set-font(vars.$fs-xlg, vars.$fw-ext, vars.$red);
     margin-left: vars.$m-4;
-    &:hover{
-        color: vars.$red;
-    }
 }
 
 .nav{
@@ -48,7 +45,7 @@
 }
 
 .nav-search{
-    @include mixins.set-position(absolute, vars.$m-5, vars.$m-3);
+    @include mixins.set-position(absolute, vars.$s-5, vars.$s-4);
 }
 
 #menu-btn{
