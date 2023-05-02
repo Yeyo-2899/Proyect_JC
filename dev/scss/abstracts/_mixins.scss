@@ -5,7 +5,14 @@
 @mixin row(){
     display: flex;
     align-items: center;
-    flex-direction: row;
+    //flex-direction: row;
+}
+
+//Este mixin ayuda a diagrama un contenedor como una matriz
+@mixin grid($gap){
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); //Esto se debe revisar para ver si el tamaño de las columnas(cards) pueden ser variables
+    gap: $gap;
 }
 
 //Este mixin ayuda a definir las reglas de estilo basicas que cambiarían en caso de pasar el mouse por encima de ciertos elementos (Es un hover bastante basico, pero ahorra mucho codigo)
@@ -39,7 +46,7 @@
         top: $fst;
 }
 
-//Este mixin ayuda a defini reglas de estilo para los sections del home-page, incluyndo el fondo
+//Este mixin ayuda a definir reglas de estilo para los sections del home-page, incluyndo el fondo
 @mixin set-section-bg($img, $overlay : 0, $color : vars.$trans-N0, $height : 100vh){
     min-height: $height;
     display: flex;
@@ -47,7 +54,7 @@
     @if($overlay == 0){
         background: url($img) no-repeat;
     }@else if($overlay == 1){
-        background: linear-gradient(0deg, var($color), var($color)), url($img) no-repeat;
+        background: linear-gradient(0deg, $color, $color), url($img) no-repeat;
     }
     background-size: cover;
     background-position: center;

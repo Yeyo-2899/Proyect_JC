@@ -1,0 +1,20 @@
+//Este archivo contiene las reglas de estilo aplicables al footer
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+
+.footer{
+    @include mixins.set-section-bg("../../img/footer.jpg", 1, vars.$trans-R1, 0);
+    @include mixins.row();
+    justify-content: center;
+    gap: vars.$g-3;
+}
+
+.footer-element{
+    text-decoration: none;
+    font-size: vars.$fs-xsm;
+    color: vars.$white;
+    margin: vars.$m-2 0;
+    &:hover{
+        transform: scale(1.2);
+    }
+}

@@ -42,7 +42,3 @@
 .nav-search{
     @include mixins.set-position(absolute, vars.$s-5, vars.$s-4);
 }
-
-#menu-btn{
-    display: none;
-}

@@ -7,10 +7,18 @@
     padding: vars.$p-2 vars.$p-3;
 }
 
-.nav-icon{
+.nav-btn{
     @include mixins.set-icon-button(vars.$fs-xxsm, vars.$black);
 }
 
-.search-icon{
+.search-btn{
     @include mixins.set-icon-button(vars.$fs-xxxsm);
+}
+
+#menu-btn{
+    display: none;
+}
+
+.like-btn{
+    @include mixins.set-icon-button(vars.$fs-xxsm, vars.$black);
 }

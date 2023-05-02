@@ -39,9 +39,9 @@
 
             <!--Nav Icons-->
             <div class="nav-icons">
-                <button id="search-dropdown" class="nav-icon"><p class="fa-solid fa-magnifying-glass"></p></button>
-                <button id="user-dropdown" class="nav-icon"><p class="fa-solid fa-user"></p></button>
-                <button id="menu-btn" class="nav-icon"><p class="fa-solid fa-bars"></p></button>
+                <button id="search-dropdown" class="nav-btn"><p class="fa-solid fa-magnifying-glass"></p></button>
+                <button id="user-dropdown" class="nav-btn"><p class="fa-solid fa-user"></p></button>
+                <button id="menu-btn" class="nav-btn"><p class="fa-solid fa-bars"></p></button>
             </div>
 
             <!--Search Bar-->
@@ -49,8 +49,8 @@
                 <form class="search-form" action="" role="search">
                     <input class="search-input" type="search" id="search-input" placeholder="Search..." aria-label="Search">
                     <div class="search-icons">
-                        <label id="filter-btn" class="search-icon fa-solid fa-filter"></label> <!--Fue necesrio cambiar esta etiqueta de button a label ya que al estar dentro de un form actualizaba la página env ez de desplegar los filtros-->
-                        <button id="search-btn" for="search-box" class="search-icon fa-solid fa-search" type="submit"></button>
+                        <label id="filter-btn" class="search-btn fa-solid fa-filter"></label> <!--Fue necesrio cambiar esta etiqueta de button a label ya que al estar dentro de un form actualizaba la página env ez de desplegar los filtros-->
+                        <button id="search-btn" for="search-box" class="search-btn fa-solid fa-search" type="submit"></button>
                     </div>
                 </form>
 
@@ -88,7 +88,7 @@
             <div class="user-box">
                 <ul class="options-list">
                     <li class="options-list-item"><p class="option-icon fa-solid fa-user"></p><a href=""></a>My Profile</li>
-                    <li class="options-list-item"><p class="option-icon fa-solid fa-folder"></p><a href=""></a>My Collection</li>
+                    <li class="options-list-item"><p class="option-icon fa-solid fa-book"></p><a href=""></a>My Collection</li>
                     <li class="options-list-item"><p class="option-icon fa-solid fa-right-from-bracket"></p><a href=""></a>Log Out</li>
                 </ul>
             </div>
@@ -103,7 +103,7 @@
     <!--Section Description-->
     <section id="description" class="description">
         <div class="description-container">
-            <h1 class="home-title">¡Cook!</h1>
+            <h1 class="description-title">¡Cook!</h1>
             <p class="description-text"><span class="highlighter">Just Cook</span> is a fun website full of the most <span class="highlighter">delicious</span> recipes
                 for you and your family to have fun cooking. Find recipes that
                 adapt to your needs or <span class="highlighter">special occasions</span>. You can access the
@@ -116,6 +116,296 @@
     </section>
     <!--Section Description-->
 
+    <!--Section Most Voted-->
+    <section id="most-voted" class="most-voted">
+        <div class="title-container">
+            <h1 class="most-voted-title">Most Voted</h1>
+            <a href="" class="recipebook-link">See more</a>
+        </div>
+
+        <div class="most-voted-container">
+            <a href="" class="recipe-card">
+                <div class="recipe-img">
+                    <img class="img" src="./img/american_breakfast.jpg" alt="American Breakfast">
+                </div>
+
+                <div class="title-card-container">
+                    <h3 class="recipe-title">American Breakfast</h3>
+                    <div class="like-container">
+                        <p class="likes">12k</p>
+                        <button class="like-btn fa-regular fa-heart""></button>
+                    </div>
+                </div>
+
+                <div class="info-card-container">
+                    <ul class="recipe-info">
+                        <li class="recipe-info-element"><p class="icons-var fa-regular fa-clock"></p><p class="recipe-info-var">Total Time: 20 min</p></li>
+                        <li class="recipe-info-element"><p class="icons-var fa-solid fa-list"></p><p class="recipe-info-var">Category: Breakfast</p></li>
+                    </ul>
+                </div>
+
+                <div class="description-card-container">
+                    <h4 class="recipe-description-title">Description</h4>
+                    <p class="recipe-description">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    </p>
+                </div>
+            </a>
+
+            <!--Esto es relleno, se tiene que quitar cuando ya sean definidas las cards-->
+            <a href="" class="recipe-card">
+                <div class="recipe-img">
+                    <img class="img" src="./img/american_breakfast.jpg" alt="American Breakfast">
+                </div>
+
+                <div class="title-card-container">
+                    <h3 class="recipe-title">American Breakfast</h3>
+                    <div class="like-container">
+                        <p class="likes">12k</p>
+                        <button class="like-btn fa-regular fa-heart""></button>
+                    </div>
+                </div>
+
+                <div class="info-card-container">
+                    <ul class="recipe-info">
+                        <li class="recipe-info-element"><p class="icons-var fa-regular fa-clock"></p><p class="recipe-info-var">Total Time: 20 min</p></li>
+                        <li class="recipe-info-element"><p class="icons-var fa-solid fa-list"></p><p class="recipe-info-var">Category: Breakfast</p></li>
+                    </ul>
+                </div>
+
+                <div class="description-card-container">
+                    <h4 class="recipe-description-title">Description</h4>
+                    <p class="recipe-description">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    </p>
+                </div>
+            </a>
+            <a href="" class="recipe-card">
+                <div class="recipe-img">
+                    <img class="img" src="./img/american_breakfast.jpg" alt="American Breakfast">
+                </div>
+
+                <div class="title-card-container">
+                    <h3 class="recipe-title">American Breakfast</h3>
+                    <div class="like-container">
+                        <p class="likes">12k</p>
+                        <button class="like-btn fa-regular fa-heart""></button>
+                    </div>
+                </div>
+
+                <div class="info-card-container">
+                    <ul class="recipe-info">
+                        <li class="recipe-info-element"><p class="icons-var fa-regular fa-clock"></p><p class="recipe-info-var">Total Time: 20 min</p></li>
+                        <li class="recipe-info-element"><p class="icons-var fa-solid fa-list"></p><p class="recipe-info-var">Category: Breakfast</p></li>
+                    </ul>
+                </div>
+
+                <div class="description-card-container">
+                    <h4 class="recipe-description-title">Description</h4>
+                    <p class="recipe-description">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    </p>
+                </div>
+            </a>
+            <a href="" class="recipe-card">
+                <div class="recipe-img">
+                    <img class="img" src="./img/american_breakfast.jpg" alt="American Breakfast">
+                </div>
+
+                <div class="title-card-container">
+                    <h3 class="recipe-title">American Breakfast</h3>
+                    <div class="like-container">
+                        <p class="likes">12k</p>
+                        <button class="like-btn fa-regular fa-heart""></button>
+                    </div>
+                </div>
+
+                <div class="info-card-container">
+                    <ul class="recipe-info">
+                        <li class="recipe-info-element"><p class="icons-var fa-regular fa-clock"></p><p class="recipe-info-var">Total Time: 20 min</p></li>
+                        <li class="recipe-info-element"><p class="icons-var fa-solid fa-list"></p><p class="recipe-info-var">Category: Breakfast</p></li>
+                    </ul>
+                </div>
+
+                <div class="description-card-container">
+                    <h4 class="recipe-description-title">Description</h4>
+                    <p class="recipe-description">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    </p>
+                </div>
+            </a>
+            <a href="" class="recipe-card">
+                <div class="recipe-img">
+                    <img class="img" src="./img/american_breakfast.jpg" alt="American Breakfast">
+                </div>
+
+                <div class="title-card-container">
+                    <h3 class="recipe-title">American Breakfast</h3>
+                    <div class="like-container">
+                        <p class="likes">12k</p>
+                        <button class="like-btn fa-regular fa-heart""></button>
+                    </div>
+                </div>
+
+                <div class="info-card-container">
+                    <ul class="recipe-info">
+                        <li class="recipe-info-element"><p class="icons-var fa-regular fa-clock"></p><p class="recipe-info-var">Total Time: 20 min</p></li>
+                        <li class="recipe-info-element"><p class="icons-var fa-solid fa-list"></p><p class="recipe-info-var">Category: Breakfast</p></li>
+                    </ul>
+                </div>
+
+                <div class="description-card-container">
+                    <h4 class="recipe-description-title">Description</h4>
+                    <p class="recipe-description">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    </p>
+                </div>
+            </a>
+            <a href="" class="recipe-card">
+                <div class="recipe-img">
+                    <img class="img" src="./img/american_breakfast.jpg" alt="American Breakfast">
+                </div>
+
+                <div class="title-card-container">
+                    <h3 class="recipe-title">American Breakfast</h3>
+                    <div class="like-container">
+                        <p class="likes">12k</p>
+                        <button class="like-btn fa-regular fa-heart""></button>
+                    </div>
+                </div>
+
+                <div class="info-card-container">
+                    <ul class="recipe-info">
+                        <li class="recipe-info-element"><p class="icons-var fa-regular fa-clock"></p><p class="recipe-info-var">Total Time: 20 min</p></li>
+                        <li class="recipe-info-element"><p class="icons-var fa-solid fa-list"></p><p class="recipe-info-var">Category: Breakfast</p></li>
+                    </ul>
+                </div>
+
+                <div class="description-card-container">
+                    <h4 class="recipe-description-title">Description</h4>
+                    <p class="recipe-description">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    </p>
+                </div>
+            </a>
+            <a href="" class="recipe-card">
+                <div class="recipe-img">
+                    <img class="img" src="./img/american_breakfast.jpg" alt="American Breakfast">
+                </div>
+
+                <div class="title-card-container">
+                    <h3 class="recipe-title">American Breakfast</h3>
+                    <div class="like-container">
+                        <p class="likes">12k</p>
+                        <button class="like-btn fa-regular fa-heart""></button>
+                    </div>
+                </div>
+
+                <div class="info-card-container">
+                    <ul class="recipe-info">
+                        <li class="recipe-info-element"><p class="icons-var fa-regular fa-clock"></p><p class="recipe-info-var">Total Time: 20 min</p></li>
+                        <li class="recipe-info-element"><p class="icons-var fa-solid fa-list"></p><p class="recipe-info-var">Category: Breakfast</p></li>
+                    </ul>
+                </div>
+
+                <div class="description-card-container">
+                    <h4 class="recipe-description-title">Description</h4>
+                    <p class="recipe-description">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    </p>
+                </div>
+            </a>
+            <a href="" class="recipe-card">
+                <div class="recipe-img">
+                    <img class="img" src="./img/american_breakfast.jpg" alt="American Breakfast">
+                </div>
+
+                <div class="title-card-container">
+                    <h3 class="recipe-title">American Breakfast</h3>
+                    <div class="like-container">
+                        <p class="likes">12k</p>
+                        <button class="like-btn fa-regular fa-heart""></button>
+                    </div>
+                </div>
+
+                <div class="info-card-container">
+                    <ul class="recipe-info">
+                        <li class="recipe-info-element"><p class="icons-var fa-regular fa-clock"></p><p class="recipe-info-var">Total Time: 20 min</p></li>
+                        <li class="recipe-info-element"><p class="icons-var fa-solid fa-list"></p><p class="recipe-info-var">Category: Breakfast</p></li>
+                    </ul>
+                </div>
+
+                <div class="description-card-container">
+                    <h4 class="recipe-description-title">Description</h4>
+                    <p class="recipe-description">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    </p>
+                </div>
+            </a>
+            <a href="" class="recipe-card">
+                <div class="recipe-img">
+                    <img class="img" src="./img/american_breakfast.jpg" alt="American Breakfast">
+                </div>
+
+                <div class="title-card-container">
+                    <h3 class="recipe-title">American Breakfast</h3>
+                    <div class="like-container">
+                        <p class="likes">12k</p>
+                        <button class="like-btn fa-regular fa-heart""></button>
+                    </div>
+                </div>
+
+                <div class="info-card-container">
+                    <ul class="recipe-info">
+                        <li class="recipe-info-element"><p class="icons-var fa-regular fa-clock"></p><p class="recipe-info-var">Total Time: 20 min</p></li>
+                        <li class="recipe-info-element"><p class="icons-var fa-solid fa-list"></p><p class="recipe-info-var">Category: Breakfast</p></li>
+                    </ul>
+                </div>
+
+                <div class="description-card-container">
+                    <h4 class="recipe-description-title">Description</h4>
+                    <p class="recipe-description">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    </p>
+                </div>
+            </a>
+            <a href="" class="recipe-card">
+                <div class="recipe-img">
+                    <img class="img" src="./img/american_breakfast.jpg" alt="American Breakfast">
+                </div>
+
+                <div class="title-card-container">
+                    <h3 class="recipe-title">American Breakfast</h3>
+                    <div class="like-container">
+                        <p class="likes">12k</p>
+                        <button class="like-btn fa-regular fa-heart""></button>
+                    </div>
+                </div>
+
+                <div class="info-card-container">
+                    <ul class="recipe-info">
+                        <li class="recipe-info-element"><p class="icons-var fa-regular fa-clock"></p><p class="recipe-info-var">Total Time: 20 min</p></li>
+                        <li class="recipe-info-element"><p class="icons-var fa-solid fa-list"></p><p class="recipe-info-var">Category: Breakfast</p></li>
+                    </ul>
+                </div>
+
+                <div class="description-card-container">
+                    <h4 class="recipe-description-title">Description</h4>
+                    <p class="recipe-description">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    </p>
+                </div>
+            </a>
+            <!--Esto es relleno, se tiene que quitar cuando ya sean definidas las cards-->
+        </div>
+    </section>
+    <!--Section Most Voted-->
+
+    <footer class="footer">
+        <a href="" class="footer-element fa-solid fa-house"></a>
+        <a href="" class="footer-element fa-solid fa-share"></a>
+        <a href="" class="footer-element fa-solid fa-info"></a>
+    </footer>
 
     <!--Header js-->
     <script src="./js/header.js"></script>

@@ -14,10 +14,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   position: fixed;
   left: 0;
   right: 0;
@@ -40,10 +36,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -59,10 +51,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   list-style: none;
   padding: 0;
   margin-right: 11.25rem;
@@ -88,10 +76,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   margin-right: 3.75rem;
   gap: 0.938rem;
 }
@@ -102,8 +86,35 @@ body {
   top: 6.25rem;
 }
 
-#menu-btn {
-  display: none;
+.footer {
+  min-height: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(216, 45, 65, 0.5)), to(rgba(216, 45, 65, 0.5))), url("../../img/footer.jpg") no-repeat;
+  background: linear-gradient(0deg, rgba(216, 45, 65, 0.5), rgba(216, 45, 65, 0.5)), url("../../img/footer.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.875rem;
+}
+
+.footer-element {
+  text-decoration: none;
+  font-size: 1.667rem;
+  color: #f8f8f8;
+  margin: 0.938rem 0;
+}
+.footer-element:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .search-form {
@@ -113,10 +124,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   background: rgba(0, 0, 0, 0.35);
   border-radius: 0.938rem;
   box-shadow: -5px 5px 20px -1px 0;
@@ -161,10 +168,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   gap: 0.469rem;
 }
 
@@ -299,25 +302,41 @@ body {
   cursor: pointer;
 }
 
-.nav-icon {
+.nav-btn {
   font-size: 1.5rem;
   color: #2d2d2d;
   border: none;
   background: transparent;
 }
-.nav-icon:hover {
+.nav-btn:hover {
   color: #d82d41;
   background: rgba(0, 0, 0, 0);
   cursor: pointer;
 }
 
-.search-icon {
+.search-btn {
   font-size: 1.331rem;
   color: #f8f8f8;
   border: none;
   background: transparent;
 }
-.search-icon:hover {
+.search-btn:hover {
+  color: #d82d41;
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+#menu-btn {
+  display: none;
+}
+
+.like-btn {
+  font-size: 1.5rem;
+  color: #2d2d2d;
+  border: none;
+  background: transparent;
+}
+.like-btn:hover {
   color: #d82d41;
   background: rgba(0, 0, 0, 0);
   cursor: pointer;
@@ -334,15 +353,6 @@ body {
   background: url("../../img/home.jpg") no-repeat;
   background-size: cover;
   background-position: center;
-}
-
-.home-title {
-  font-size: 9.166rem;
-  font-weight: 700;
-  color: #f8f8f8;
-  text-decoration: none;
-  margin: 0;
-  margin-bottom: 3.75rem;
 }
 
 .description {
@@ -363,6 +373,15 @@ body {
   max-width: 80vh;
 }
 
+.description-title {
+  font-size: 9.166rem;
+  font-weight: 700;
+  color: #f8f8f8;
+  text-decoration: none;
+  margin: 0;
+  margin-bottom: 3.75rem;
+}
+
 .description-text {
   font-size: 1.667rem;
   font-weight: 500;
@@ -376,4 +395,220 @@ body {
   font-weight: 500;
   color: #d82d41;
   text-decoration: none;
+}
+
+.most-voted {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.45)), to(rgba(0, 0, 0, 0.45))), url("../../img/most_voted.jpg") no-repeat;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../../img/most_voted.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 7.5rem;
+}
+
+.title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 7.5rem;
+  margin-bottom: 3.75rem;
+}
+
+.most-voted-title {
+  font-size: 9.166rem;
+  font-weight: 700;
+  color: #f8f8f8;
+  text-decoration: none;
+  margin: 0;
+  margin-left: 11.25rem;
+}
+
+.recipebook-link {
+  font-size: 1.331rem;
+  font-weight: 300;
+  color: #f8f8f8;
+  text-decoration: none;
+  margin: 0;
+  margin-right: 11.25rem;
+}
+.recipebook-link:hover {
+  color: #d82d41;
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.title-card-container {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 0.938rem;
+}
+
+.recipe-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #f8f8f8;
+  border-radius: 1.25rem;
+  box-shadow: -5px 5px 20px -1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: -5px 5px 20px -1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: -5px 5px 20px -1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-decoration: none;
+}
+.recipe-card:hover {
+  cursor: pointer;
+}
+.recipe-card:hover:hover .img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: -webkit-transform 0.7s ease-out;
+  transition: -webkit-transform 0.7s ease-out;
+  transition: transform 0.7s ease-out;
+  transition: transform 0.7s ease-out, -webkit-transform 0.7s ease-out;
+}
+
+.recipe-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: 8.125rem;
+  border-bottom: 0.4rem solid #d82d41;
+}
+
+.img {
+  width: 100%;
+}
+
+.title-card-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0.938rem 0;
+  width: 100%;
+}
+
+.recipe-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #d82d41;
+  text-decoration: none;
+  margin: 0;
+  margin-left: 0.938rem;
+}
+
+.like-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 0.938rem;
+}
+
+.likes {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d2d2d;
+  text-decoration: none;
+  margin: 0;
+  margin-right: 0.469rem;
+}
+
+.info-card-container {
+  width: 100%;
+}
+
+.recipe-info {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-left: 1.875rem;
+  gap: 0.469rem;
+}
+
+.recipe-info-element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.icons-var {
+  margin: 0;
+}
+
+.recipe-info-var {
+  font-size: 1.331rem;
+  font-weight: 300;
+  color: #2d2d2d;
+  text-decoration: none;
+  margin: 0;
+  margin-left: 0.469rem;
+}
+
+.description-card-container {
+  width: 100%;
+  margin-top: 0.938rem;
+}
+
+.recipe-description-title {
+  font-size: 1.667rem;
+  font-weight: 700;
+  color: #d82d41;
+  text-decoration: none;
+  margin: 0;
+  margin-left: 0.938rem;
+  margin-bottom: 0.938rem;
+}
+
+.recipe-description {
+  font-size: 1.331rem;
+  font-weight: 300;
+  color: #2d2d2d;
+  text-decoration: none;
+  margin: 0;
+  margin: 0 0.938rem 0.938rem 0.938rem;
 }
