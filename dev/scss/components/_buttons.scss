@@ -1,0 +1,16 @@
+//Este archivo contiene las reglas de estilo de los botones utilizados a lo largo de la aplicación
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+
+.primary-btn{
+    @include mixins.set-text-button();
+    padding: vars.$p-2 vars.$p-3;
+}
+
+.nav-icon{
+    @include mixins.set-icon-button(vars.$fs-xxsm, vars.$black);
+}
+
+.search-icon{
+    @include mixins.set-icon-button(vars.$fs-xxxsm);
+}

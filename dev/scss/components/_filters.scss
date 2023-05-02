@@ -34,8 +34,5 @@
 .filter{
     @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-lig, vars.$white);
     text-decoration: none;
-    &:hover{
-        @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-lig, vars.$red);
-        cursor: pointer;
-    }
+    @include mixins.hover();
 }

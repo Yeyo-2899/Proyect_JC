@@ -22,18 +22,12 @@
 .options-list-item{
     @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-lig);
     margin-bottom: vars.$m-2; 
-    &:hover{
-        @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-lig, vars.$red);
-        cursor: pointer;
-    }
+    @include mixins.hover();
 }
 
 .option-icon{
     @include mixins.set-icon-button(vars.$fs-xxxsm, vars.$black);
     margin: 0;
     margin-right: vars.$m-2;
-    &:hover{
-        @include mixins.set-icon-button(vars.$fs-xxxsm, vars.$red);
-        cursor: pointer;
-    }
+    @include mixins.hover();
 }

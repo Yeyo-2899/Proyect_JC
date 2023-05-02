@@ -5,7 +5,7 @@
 .search-form{
     @include mixins.row();
     @include mixins.set-card-shape(vars.$r-2, vars.$trans-N2);
-    @include mixins.set-transform(); //Se debe cambiar a 0 para desaparecerlo
+    @include mixins.set-transform();
     width: vars.$s-10;
     padding: vars.$p-2 vars.$p-3;
     justify-content: space-between;
@@ -25,8 +25,4 @@
 .search-icons{
     @include mixins.row();
     gap: vars.$g-1;
-}
-
-.search-icon{
-    @include mixins.set-icon-button(vars.$fs-xxxsm);
 }

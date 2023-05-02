@@ -8,6 +8,15 @@
     flex-direction: row;
 }
 
+//Este mixin ayuda a definir las reglas de estilo basicas que cambiarían en caso de pasar el mouse por encima de ciertos elementos (Es un hover bastante basico, pero ahorra mucho codigo)
+@mixin hover($bg : vars.$trans-N0, $color : vars.$red){
+    &:hover{
+        color: $color;
+        background: $bg;
+        cursor: pointer;
+    }
+}
+
 //Este mixin ayuda a definir reglas de estilo a textos
 @mixin set-font($size : vars.$fs-xxxsm, $weight : vars.$fw-lig, $color : vars.$black){
     font-size: $size;
@@ -20,15 +29,28 @@
 @mixin set-position($position, $fst : 0, $snd : 0, $trd : 0, $z-i : 0){
     @if($position == fixed){
         position: fixed;
-        top: $fst;
         left: $snd;
         right: $trd;
         z-index: $z-i;
     } @else if($position == absolute){
         position: absolute;
-        top: $fst;
         right: $snd;
     }
+        top: $fst;
+}
+
+//Este mixin ayuda a defini reglas de estilo para los sections del home-page, incluyndo el fondo
+@mixin set-section-bg($img, $overlay : 0, $color : vars.$trans-N0, $height : 100vh){
+    min-height: $height;
+    display: flex;
+    align-items: center;
+    @if($overlay == 0){
+        background: url($img) no-repeat;
+    }@else if($overlay == 1){
+        background: linear-gradient(0deg, var($color), var($color)), url($img) no-repeat;
+    }
+    background-size: cover;
+    background-position: center;
 }
 
 //Este mixin ayuda a definir reglas de estilo a elementos que se desplieguen como un card
@@ -46,9 +68,14 @@
     transition: .65s ease;
 }
 
-//Este mixin ayuda a definir reglas de estilo para botones
-@mixin set-button(){
-
+//Este mixin ayuda a definir reglas de estilo para botones que contengan texto adentro
+@mixin set-text-button($size: vars.$fs-xsm){
+    @include set-font($size, vars.$fw-sem, vars.$red);
+    background: vars.$trans-N0;
+    border: 2.5px solid vars.$red;
+    border-radius: vars.$r-2;
+    transition: background .35s ease-out, color .35s ease-out;
+    @include hover(vars.$red, vars.$white);
 }
 
 //Este mixin ayuda a definir reglas de estilo para botones de tipo icono
@@ -57,8 +84,5 @@
     color: $color;
     border: none;
     background: transparent;
-    &:hover{
-        color: vars.$red;
-        cursor: pointer;
-    }
+    @include hover();
 }

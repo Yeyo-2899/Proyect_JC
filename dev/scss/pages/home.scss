@@ -1,17 +1,39 @@
 //Este es el archivo que contiene las reglas de estilo y los llamados a reglas de otros archivos necesarias para el homepage
-
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
 @use '../base/base';
 @use '../layout/header';
 @use '../components/search-bar';
 @use '../components/filters';
 @use '../components/user-box';
+@use '../components/buttons';
 @import url(../vendor/normalize.css);
 
 .home{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: url(../../../dist/img/home.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
+    @include mixins.set-section-bg("../../img/home.jpg");
 }
+
+.home-title{
+    @include mixins.set-font(vars.$fs-xxxlg, vars.$fw-bol, vars.$white);
+    margin: 0;
+    margin-bottom: vars.$m-4;
+}
+
+.description{
+    @include mixins.set-section-bg("../../img/description.jpg");
+}
+
+.description-container{
+    margin-left: vars.$m-7;
+    max-width: 80vh;
+}
+
+.description-text{
+    @include mixins.set-font(vars.$fs-xsm, vars.$fw-med, vars.$white);
+    margin: 0;
+    margin-bottom: vars.$m-4;
+    .highlighter{
+        @include mixins.set-font(vars.$fs-xsm, vars.$fw-med, vars.$red);
+    }
+}
+

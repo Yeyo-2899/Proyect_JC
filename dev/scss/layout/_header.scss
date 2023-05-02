@@ -30,19 +30,13 @@
 
 .nav-item{
     @include mixins.set-font(vars.$fs-xxsm, vars.$fw-lig);
-    &:hover{
-        @include mixins.set-font(vars.$fs-xxsm, vars.$fw-lig ,vars.$red);
-    }
+    @include mixins.hover();
 }
 
 .nav-icons{
     @include mixins.row();
     margin-right: vars.$m-4;
     gap: vars.$g-2;
-}
-
-.nav-icon{
-    @include mixins.set-icon-button(vars.$fs-xxsm, vars.$black);
 }
 
 .nav-search{
