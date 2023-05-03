@@ -24,13 +24,6 @@
     overflow: hidden;
     flex-direction: column;
     text-decoration: none;
-    &:hover{
-        cursor: pointer;
-        &:hover .img-recipe-panel{
-            transform: scale(1.2);
-            transition: transform .7s ease-out;
-        }
-    }
 }
 
 .image-container{

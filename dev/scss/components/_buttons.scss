@@ -22,3 +22,10 @@
 .like-btn{
     @include mixins.set-icon-button(vars.$fs-xxsm, vars.$black);
 }
+
+.skip-btn{
+    @include mixins.set-icon-button(vars.$fs-xsm);
+    font-weight: vars.$fs-sm;
+    margin-right: vars.$m-4;
+    padding: 0;
+}

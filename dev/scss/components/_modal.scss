@@ -1,0 +1,87 @@
+//Este archivo contiene las reglas de estilo del modal utilizado para el login/signup de la aplicación
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+
+.modal{
+    @include mixins.set-section-bg("../../img/login.jpg", 1, vars.$trans-N2);
+    @include mixins.set-position(fixed, 0, 0, 0, 1100);
+    justify-content: center;
+}
+
+.modal.active{
+    transform: translateY(-60rem);
+    transition: .7s ease;
+}
+
+.modal-header{
+    @include mixins.set-position(fixed, vars.$m-2, 0, 0, 1200); //vars.$m-3
+    @include mixins.row();
+    justify-content: space-between;
+}
+
+.modal-header.active{
+    transform: translateY(-62rem);
+    transition: .7s ease;
+}
+
+.form-container{
+    @include mixins.set-card-shape(vars.$r-3, vars.$trans-N3);
+    width: 60vh;
+    justify-content: center;
+    padding: vars.$p-4 vars.$p-4;
+}
+
+.form-title{
+    @include mixins.set-font(vars.$fs-xlg, vars.$fw-ext, vars.$white);
+    margin: 0;
+    margin-bottom: vars.$m-3;
+    display: flex;
+    justify-content: center;
+}
+
+.form{
+    margin: 0 vars.$m-4;
+}
+
+.input-content{
+    @include mixins.set-card-shape(vars.$r-1, vars.$trans-N3);
+    display: flex;
+    align-items: center;
+    padding: vars.$p-2 vars.$p-2;
+    margin-bottom: vars.$m-3;
+}
+
+.modal-icon{
+    color: vars.$white;
+    font-size: vars.$fs-xxxsm;
+    padding-right: vars.$p-1;
+    margin-right: vars.$m-1;
+    border-right: 0.15rem solid vars.$white;
+}
+
+.modal-input{
+    @include mixins.set-font(vars.$fs-xxsm, vars.$fw-reg, vars.$white);
+    background: transparent;
+    border: none;
+    width: 100%;
+}
+
+.submit{
+    display: flex;
+    justify-content: center;
+}
+
+.alternative-container{
+    @include mixins.row();
+    justify-content: center;
+}
+
+.alternative-text{
+    @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-sem, vars.$white);
+    margin: vars.$m-3 0 0 0;
+}
+
+.alternative-link{
+    text-decoration: none;
+    color: vars.$red;
+}

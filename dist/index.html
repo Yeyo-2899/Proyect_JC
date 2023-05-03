@@ -23,6 +23,36 @@
 
 </head>
 <body>
+        <!--Modal Login-->
+        <section id="modal" class="modal">
+            <div id="modal-header" class="modal-header">
+                <a href="" class="logo">JUSTCOOK</a>
+                <button id="skip-btn" class="skip-btn">Skip</button>
+            </div>
+
+            <div class="form-container">
+                <h1 class="form-title">Login</h1>
+                <form action="" class="form">
+                    <div class="input-content">
+                        <label class="fas fa-user-lock modal-icon"></label>
+                        <input class="modal-input" type="text" name="user_name" id="#user" placeholder="User">
+                    </div>
+                    <div class="input-content">
+                        <label class="fas fa-key modal-icon"></label>
+                        <input class="modal-input" type="password" name="password" id="#password" placeholder="Password">
+                    </div>
+                    <div class="submit">
+                        <input type="submit" vlaue="Entrar" class="primary-btn">
+                    </div>
+                </form>
+                <div class="alternative-container">
+                    <p class="alternative-text">First time? <a href="" class="alternative-link">Sign Up!</a></p>
+                </div>
+            </div>
+
+        </section>
+    <!--Modal Login-->
+
     <!--Header-->
     <header class="header">
         <nav class="nav">
@@ -89,7 +119,7 @@
                 <ul class="options-list">
                     <li class="options-list-item"><p class="option-icon fa-solid fa-user"></p><a href=""></a>My Profile</li>
                     <li class="options-list-item"><p class="option-icon fa-solid fa-book"></p><a href=""></a>My Collection</li>
-                    <li class="options-list-item"><p class="option-icon fa-solid fa-right-from-bracket"></p><a href=""></a>Log Out</li>
+                    <li class="options-list-item"><p class="option-icon fa-solid fa-right-from-bracket"></p><button id="#modal-btn">Log Out</button></li>
                 </ul>
             </div>
         </nav>

@@ -3,7 +3,9 @@ let navbar = document.querySelector('.nav-items');
 let searchForm = document.querySelector('.search-form');
 let filters =  document.querySelector('.filter-box');
 let useroptions =  document.querySelector('.user-box');
+let modal = document.querySelector('.modal');
 let header = document.querySelector('header');
+let headerModal = document.querySelector('.modal-header');
 
 window.addEventListener('scroll', function(){
     let value = window.scrollY;
@@ -30,6 +32,20 @@ document.querySelector('#user-dropdown').onclick = () =>{
     navbar.classList.remove('active');
     filters.classList.remove('active');
     searchForm.classList.remove('active');
+}
+
+/*document.querySelector('#modal-btn').onclick = () =>{
+    modal.classList.toggle('active');
+    headerModal.classList.toggle('active');
+    useroptions.classList.remove('active');
+    navbar.classList.remove('active');
+    filters.classList.remove('active');
+    searchForm.classList.remove('active');
+}*/
+
+document.querySelector('#skip-btn').onclick = () =>{
+    modal.classList.remove('active');
+    headerModal.classList.remove('active');
 }
 
 document.querySelector('#filter-btn').onclick = () =>{
