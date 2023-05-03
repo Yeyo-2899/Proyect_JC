@@ -1,0 +1,170 @@
+//Este es el archivo que contiene las reglas de estilo y los llamados a reglas de otros archivos necesarias para la pagina a detalle de receta
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+@use '../base/base';
+@use '../layout/header';
+@use '../layout/footer';
+@use '../components/search-bar';
+@use '../components/filters';
+@use '../components/user-box';
+@use '../components/buttons';
+@use '../components/card';
+@import url(../vendor/normalize.css);
+
+
+.recipe{
+    @include mixins.set-section-bg("../../img/recipe-book.jpg",1, vars.$trans-W1);
+    padding: vars.$p-6 vars.$p-9 vars.$p-4 vars.$p-9;
+}
+
+.recipe-panel{
+    @include mixins.row();
+    @include mixins.set-card-shape(vars.$r-4, vars.$white, vars.$trans-N2);
+    width: 100%;
+    overflow: hidden;
+    flex-direction: column;
+    text-decoration: none;
+    &:hover{
+        cursor: pointer;
+        &:hover .img-recipe-panel{
+            transform: scale(1.2);
+            transition: transform .7s ease-out;
+        }
+    }
+}
+
+.image-container{
+    @include mixins.row();
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    height: vars.$s-10;
+    border-bottom: 0.4rem solid vars.$red;
+}
+
+.img-recipe-panel{
+    width: 100%;
+}
+
+.data-container{
+    width: 100%;
+}
+
+.title-container{
+    @include mixins.row();
+    justify-content: space-between;
+    margin-top: vars.$m-3;
+    width: 100%;
+}
+
+.title{
+    @include mixins.set-font(vars.$fs-xxlg, vars.$fw-bol, vars.$red);
+    margin: 0;
+    margin-left: vars.$m-4;
+}
+
+.likes-count{
+    @include mixins.row();
+    margin-right: vars.$m-4;
+    gap: vars.$g-2;
+}
+
+.likes-amount{
+    @include mixins.set-font(vars.$fs-sm, vars.$fw-sem);
+    margin: 0; 
+}
+
+.info-container{
+    @include mixins.row();
+    align-items: flex-start;
+    margin: vars.$m-3 vars.$m-4 0 vars.$m-4;
+}
+
+.data{
+    margin-left: vars.$m-3;
+}
+
+.data-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.data-list-element{
+    @include mixins.row();
+}
+
+.icons-data{
+    margin: 0;
+    margin-bottom: vars.$m-1;
+}
+
+.data-info{
+    @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-lig);
+    margin: 0;
+    margin-bottom: vars.$m-1;
+    margin-left: vars.$m-2;
+}
+
+.description-container{
+    margin: vars.$m-3 + vars.$m-2 vars.$m-4;
+}
+
+.subtitle{
+    @include mixins.set-font(vars.$fs-lg, vars.$fw-bol, vars.$red);
+    margin: 0;
+}
+
+.description{
+    @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-lig);
+    margin: 0;
+    margin-top: vars.$m-3;
+}
+
+.requirements-box{
+    width: 100%;
+}
+
+.requirements-card{
+    @include mixins.set-card-shape(vars.$r-3, vars.$trans-N1);
+    @include mixins.row();
+    margin: 0 vars.$m-5;
+    padding: vars.$p-3 vars.$p-4 0 vars.$p-4;
+}
+
+.requirements-container{
+    width: 100%;
+    margin-bottom: vars.$p-3;
+}
+
+.requirement-title{
+    @include mixins.set-font(vars.$fs-med, vars.$fw-bol, vars.$red);
+    margin: 0;
+    margin-bottom: vars.$m-2;
+}
+
+.requirement-list{
+    margin: 0;
+    padding: 0;
+    margin-left: vars.$m-2;
+}
+
+.requirement-list{
+    @include mixins.set-font(vars.$fs-xxsm, vars.$fw-lig);
+    @include mixins.row();
+    align-items: flex-start;
+    flex-direction: column;
+    gap: vars.$g-1;
+}
+
+.relateds-container{
+    @include mixins.row();
+    width: 100%;
+    margin: vars.$m-4 0;
+    flex-direction: column;
+}
+
+.relateds{
+    @include mixins.grid(vars.$g-2, 15);
+    margin: vars.$m-3 vars.$m-4 0 vars.$m-4;
+}

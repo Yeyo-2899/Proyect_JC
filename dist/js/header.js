@@ -48,3 +48,7 @@ document.querySelector('#search-btn').onclick = () =>{
 document.querySelector('#home-btn').onclick = () =>{
     window.location.href = '../index.html';
 }
+
+document.querySelector('#recipe-book-btn').onclick = () =>{
+    window.location.href = '../html/recipe-book.html';
+}
