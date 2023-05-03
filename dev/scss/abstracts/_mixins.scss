@@ -9,9 +9,9 @@
 }
 
 //Este mixin ayuda a diagrama un contenedor como una matriz
-@mixin grid($gap){
+@mixin grid($gap, $min){
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); //Esto se debe revisar para ver si el tamaño de las columnas(cards) pueden ser variables
+    grid-template-columns: repeat(auto-fit, minmax($min + rem, 1fr)); //Esto se debe revisar para ver si el tamaño de las columnas(cards) pueden ser variables
     gap: $gap;
 }
 

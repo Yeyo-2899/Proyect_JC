@@ -1,0 +1,30 @@
+//Este es el archivo que contiene las reglas de estilo y los llamados a reglas de otros archivos necesarias para la pagina del recetario
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+@use '../base/base';
+@use '../layout/header';
+@use '../layout/footer';
+@use '../components/search-bar';
+@use '../components/filters';
+@use '../components/user-box';
+@use '../components/buttons';
+@use '../components/card';
+@import url(../vendor/normalize.css);
+
+.recipe-book{
+    @include mixins.set-section-bg("../../img/recipe-book.jpg",1, vars.$trans-W1);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: vars.$p-6 vars.$p-8 vars.$p-5 vars.$p-8;
+}
+
+.recipe-book-title{
+    @include mixins.set-font(vars.$fs-big, vars.$fw-sem, vars.$red);
+    margin-bottom: vars.$m-3;
+}
+
+.recipes-container{
+    width: 100%;
+    @include mixins.grid(vars.$g-2, 20);
+}
+

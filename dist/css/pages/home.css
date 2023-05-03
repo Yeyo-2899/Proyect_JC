@@ -94,8 +94,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(216, 45, 65, 0.5)), to(rgba(216, 45, 65, 0.5))), url("../../img/footer.jpg") no-repeat;
-  background: linear-gradient(0deg, rgba(216, 45, 65, 0.5), rgba(216, 45, 65, 0.5)), url("../../img/footer.jpg") no-repeat;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(216, 45, 65, 0.8)), to(rgba(216, 45, 65, 0.8))), url("../../img/footer.jpg") no-repeat;
+  background: linear-gradient(0deg, rgba(216, 45, 65, 0.8), rgba(216, 45, 65, 0.8)), url("../../img/footer.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -103,7 +103,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 1.875rem;
+  gap: 3.75rem;
 }
 
 .footer-element {
@@ -342,126 +342,6 @@ body {
   cursor: pointer;
 }
 
-.home {
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: url("../../img/home.jpg") no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-.description {
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: url("../../img/description.jpg") no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-.description-container {
-  margin-left: 11.25rem;
-  max-width: 80vh;
-}
-
-.description-title {
-  font-size: 9.166rem;
-  font-weight: 700;
-  color: #f8f8f8;
-  text-decoration: none;
-  margin: 0;
-  margin-bottom: 3.75rem;
-}
-
-.description-text {
-  font-size: 1.667rem;
-  font-weight: 500;
-  color: #f8f8f8;
-  text-decoration: none;
-  margin: 0;
-  margin-bottom: 3.75rem;
-}
-.description-text .highlighter {
-  font-size: 1.667rem;
-  font-weight: 500;
-  color: #d82d41;
-  text-decoration: none;
-}
-
-.most-voted {
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.45)), to(rgba(0, 0, 0, 0.45))), url("../../img/most_voted.jpg") no-repeat;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../../img/most_voted.jpg") no-repeat;
-  background-size: cover;
-  background-position: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding-bottom: 7.5rem;
-}
-
-.title-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-top: 7.5rem;
-  margin-bottom: 3.75rem;
-}
-
-.most-voted-title {
-  font-size: 9.166rem;
-  font-weight: 700;
-  color: #f8f8f8;
-  text-decoration: none;
-  margin: 0;
-  margin-left: 11.25rem;
-}
-
-.recipebook-link {
-  font-size: 1.331rem;
-  font-weight: 300;
-  color: #f8f8f8;
-  text-decoration: none;
-  margin: 0;
-  margin-right: 11.25rem;
-}
-.recipebook-link:hover {
-  color: #d82d41;
-  background: rgba(0, 0, 0, 0);
-  cursor: pointer;
-}
-
-.title-card-container {
-  width: 100%;
-  display: -ms-grid;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 0.938rem;
-}
-
 .recipe-card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -611,4 +491,127 @@ body {
   text-decoration: none;
   margin: 0;
   margin: 0 0.938rem 0.938rem 0.938rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.home {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url("../../img/home.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.description {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url("../../img/description.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.description-container {
+  margin-left: 11.25rem;
+  max-width: 80vh;
+}
+
+.description-title {
+  font-size: 9.166rem;
+  font-weight: 700;
+  color: #f8f8f8;
+  text-decoration: none;
+  margin: 0;
+  margin-bottom: 3.75rem;
+}
+
+.description-text {
+  font-size: 1.667rem;
+  font-weight: 500;
+  color: #f8f8f8;
+  text-decoration: none;
+  margin: 0;
+  margin-bottom: 3.75rem;
+}
+.description-text .highlighter {
+  font-size: 1.667rem;
+  font-weight: 500;
+  color: #d82d41;
+  text-decoration: none;
+}
+
+.most-voted {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.45)), to(rgba(0, 0, 0, 0.45))), url("../../img/most_voted.jpg") no-repeat;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../../img/most_voted.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 11.25rem 7.5rem 11.25rem;
+}
+
+.title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 7.5rem;
+  margin-bottom: 3.75rem;
+}
+
+.most-voted-title {
+  font-size: 9.166rem;
+  font-weight: 700;
+  color: #f8f8f8;
+  text-decoration: none;
+  margin: 0;
+}
+
+.recipebook-link {
+  font-size: 1.331rem;
+  font-weight: 300;
+  color: #f8f8f8;
+  text-decoration: none;
+  margin: 0;
+}
+.recipebook-link:hover {
+  color: #d82d41;
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.most-voted-container {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18.3rem, 1fr));
+  gap: 0.938rem;
 }

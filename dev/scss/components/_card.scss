@@ -1,0 +1,105 @@
+//Este codigo contiene las reglas de estilo que se le aplicarán a los cards
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+
+
+.recipe-card{
+    @include mixins.row();
+    @include mixins.set-card-shape(vars.$r-3, vars.$white, vars.$trans-N1);
+    overflow: hidden;
+    flex-direction: column;
+    text-decoration: none;
+    &:hover{
+        cursor: pointer;
+        &:hover .img{
+            transform: scale(1.2);
+            transition: transform .7s ease-out;
+        }
+    }
+}
+
+.recipe-img{
+    @include mixins.row();
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    height: vars.$s-7;
+    border-bottom: 0.4rem solid vars.$red;
+}
+
+.img{
+    width: 100%;
+}
+
+.title-card-container{
+    @include mixins.row();
+    justify-content: space-between;
+    margin: vars.$m-2 0;
+    width: 100%;
+}
+
+.recipe-title{
+    @include mixins.set-font(vars.$fs-sm, vars.$fw-bol, vars.$red);
+    margin: 0;
+    margin-left: vars.$m-2;
+}
+
+.like-container{
+    @include mixins.row();
+    margin-right: vars.$m-2;
+}
+
+.likes{
+    @include mixins.set-font(vars.$fs-xxsm, vars.$fw-sem);
+    margin: 0;
+    margin-right: vars.$m-1;
+}
+
+.info-card-container{
+    width: 100%;
+}
+
+.recipe-info{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-left: vars.$m-3;
+    gap: vars.$g-1;
+}
+
+.recipe-info-element{
+    @include mixins.row();
+}
+
+.icons-var{
+    margin: 0;
+}
+
+.recipe-info-var{
+    @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-lig);
+    margin: 0;
+    margin-left: vars.$m-1;
+}
+
+.description-card-container{
+    width: 100%;
+    margin-top: vars.$m-2;
+}
+
+.recipe-description-title{
+    @include mixins.set-font(vars.$fs-xsm, vars.$fw-bol, vars.$red);
+    margin: 0;
+    margin-left: vars.$m-2;
+    margin-bottom: vars.$m-2;
+}
+
+.recipe-description{
+    @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-lig);
+    margin: 0;
+    margin: 0 vars.$m-2 vars.$m-2 vars.$m-2;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    display: -webkit-box; 
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical; 
+}

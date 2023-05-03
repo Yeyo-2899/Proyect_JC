@@ -6,7 +6,7 @@
     @include mixins.set-section-bg("../../img/footer.jpg", 1, vars.$trans-R1, 0);
     @include mixins.row();
     justify-content: center;
-    gap: vars.$g-3;
+    gap: vars.$g-4;
 }
 
 .footer-element{

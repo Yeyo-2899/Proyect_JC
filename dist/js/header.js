@@ -41,6 +41,10 @@ document.querySelector('#search-btn').onclick = () =>{
     filters.classList.remove('active');
 }
 
-document.querySelector('.nav-items').onclick = () =>{
+/*document.querySelector('.nav-items').onclick = () =>{
     navbar.classList.remove('active');
+}*/
+
+document.querySelector('#home-btn').onclick = () =>{
+    window.location.href = '../index.html';
 }
