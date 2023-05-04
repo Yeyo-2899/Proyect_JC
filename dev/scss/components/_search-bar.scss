@@ -5,14 +5,13 @@
 .search-form{
     @include mixins.row();
     @include mixins.set-card-shape(vars.$r-2, vars.$trans-N2);
-    @include mixins.set-transform();
     width: vars.$s-10;
     padding: vars.$p-2 vars.$p-3;
     justify-content: space-between;
 }
 
 .search-form.active{
-    @include mixins.set-transform(0);
+    @include mixins.set-transform();
 }
 
 .search-input{

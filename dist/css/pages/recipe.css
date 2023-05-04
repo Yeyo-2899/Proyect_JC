@@ -82,7 +82,7 @@ body {
 
 .nav-search {
   position: absolute;
-  right: 3.75rem;
+  right: -50rem;
   top: 6.25rem;
 }
 
@@ -129,10 +129,6 @@ body {
   box-shadow: -5px 5px 20px -1px 0;
   -webkit-box-shadow: -5px 5px 20px -1px 0;
   -moz-box-shadow: -5px 5px 20px -1px 0;
-  -webkit-transform: translate(50rem);
-          transform: translate(50rem);
-  -webkit-transition: 0.65s ease;
-  transition: 0.65s ease;
   width: 22.5rem;
   padding: 0.938rem 1.875rem;
   -webkit-box-pack: justify;
@@ -141,8 +137,8 @@ body {
 }
 
 .search-form.active {
-  -webkit-transform: translate(0);
-          transform: translate(0);
+  -webkit-transform: translate(-53.75rem);
+          transform: translate(-53.75rem);
   -webkit-transition: 0.65s ease;
   transition: 0.65s ease;
 }
@@ -177,18 +173,14 @@ body {
   box-shadow: -5px 5px 20px -1px 0;
   -webkit-box-shadow: -5px 5px 20px -1px 0;
   -moz-box-shadow: -5px 5px 20px -1px 0;
-  -webkit-transform: translate(50rem);
-          transform: translate(50rem);
-  -webkit-transition: 0.65s ease;
-  transition: 0.65s ease;
   padding: 1.875rem;
   margin-top: 0.938rem;
   width: 22.5rem;
 }
 
 .filter-box.active {
-  -webkit-transform: translate(0);
-          transform: translate(0);
+  -webkit-transform: translate(-53.75rem);
+          transform: translate(-53.75rem);
   -webkit-transition: 0.65s ease;
   transition: 0.65s ease;
 }
@@ -226,23 +218,19 @@ body {
 
 .user-box {
   position: absolute;
-  right: 3.75rem;
+  right: -50rem;
   top: 6.25rem;
   background: #f8f8f8;
   border-radius: 0.938rem;
   box-shadow: -5px 5px 20px -1px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: -5px 5px 20px -1px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: -5px 5px 20px -1px rgba(0, 0, 0, 0.1);
-  -webkit-transform: translate(50rem);
-          transform: translate(50rem);
-  -webkit-transition: 0.65s ease;
-  transition: 0.65s ease;
   padding: 0.469rem 1.875rem;
 }
 
 .user-box.active {
-  -webkit-transform: translate(0);
-          transform: translate(0);
+  -webkit-transform: translate(-53.75rem);
+          transform: translate(-53.75rem);
   -webkit-transition: 0.65s ease;
   transition: 0.65s ease;
 }

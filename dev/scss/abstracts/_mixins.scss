@@ -70,7 +70,7 @@
 }
 
 //Este mixin ayuda a definir una transformación de un elemento
-@mixin set-transform($scale : vars.$s-11){
+@mixin set-transform($scale : -53.75rem){
     transform: translate($scale);
     transition: .65s ease;
 }

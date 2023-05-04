@@ -5,14 +5,13 @@
 
 .filter-box{
     @include mixins.set-card-shape(vars.$r-2, vars.$trans-N5);
-    @include mixins.set-transform();
     padding: vars.$p-3;
     margin-top: vars.$m-2;
     width: vars.$s-10;
 }
 
 .filter-box.active{
-    @include mixins.set-transform(0);
+    @include mixins.set-transform();
 }
 
 .filter-title{

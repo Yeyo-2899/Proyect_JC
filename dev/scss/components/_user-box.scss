@@ -4,14 +4,13 @@
 
 
 .user-box{
-    @include mixins.set-position(absolute, vars.$s-5, vars.$s-4);
+    @include mixins.set-position(absolute, vars.$s-5, -50rem);
     @include mixins.set-card-shape(vars.$r-2, vars.$white, vars.$trans-N1);
-    @include mixins.set-transform();
     padding: vars.$p-1 vars.$p-3;
 }
 
 .user-box.active{
-    @include mixins.set-transform(0);
+    @include mixins.set-transform();
 }
 
 .options-list{
