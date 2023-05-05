@@ -9,7 +9,8 @@
 }
 
 .modal.active{
-    transform: translateY(0);
+    //transform: translateY(0);
+    top: 0;
     transition: .7s ease;
 }
 
@@ -20,7 +21,8 @@
 }
 
 .modal-header.active{
-    transform: translateY(vars.$m-2);
+    //transform: translateY(vars.$m-2);
+    top: vars.$m-2;
     transition: .7s ease;
 }
 

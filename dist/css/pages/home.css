@@ -525,8 +525,7 @@ body {
 }
 
 .modal.active {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  top: 0;
   -webkit-transition: 0.7s ease;
   transition: 0.7s ease;
 }
@@ -549,8 +548,7 @@ body {
 }
 
 .modal-header.active {
-  -webkit-transform: translateY(0.938rem);
-          transform: translateY(0.938rem);
+  top: 0.938rem;
   -webkit-transition: 0.7s ease;
   transition: 0.7s ease;
 }
