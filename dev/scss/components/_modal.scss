@@ -6,24 +6,22 @@
     @include mixins.set-section-bg("../../img/login.jpg", 1, vars.$trans-N2);
     @include mixins.set-position(fixed, -62rem, 0, 0, 1100);
     justify-content: center;
+    transition: top .5s ease;
 }
 
 .modal.active{
-    //transform: translateY(0);
     top: 0;
-    transition: .7s ease;
 }
 
 .modal-header{
-    @include mixins.set-position(fixed, -62rem, 0, 0, 1200); //vars.$m-3
+    @include mixins.set-position(fixed, -62rem, 0, 0, 2000); //vars.$m-3
     @include mixins.row();
     justify-content: space-between;
+    transition: top .5s ease;
 }
 
 .modal-header.active{
-    //transform: translateY(vars.$m-2);
     top: vars.$m-2;
-    transition: .7s ease;
 }
 
 .form-container{
@@ -83,7 +81,3 @@
     margin: vars.$m-3 0 0 0;
 }
 
-.alternative-link{
-    text-decoration: none;
-    color: vars.$red;
-}

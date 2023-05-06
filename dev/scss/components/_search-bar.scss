@@ -8,6 +8,7 @@
     width: vars.$s-10;
     padding: vars.$p-2 vars.$p-3;
     justify-content: space-between;
+    transition: .65s ease;
 }
 
 .search-form.active{

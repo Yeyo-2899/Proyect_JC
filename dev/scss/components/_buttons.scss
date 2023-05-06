@@ -9,10 +9,54 @@
 
 .nav-btn{
     @include mixins.set-icon-button(vars.$fs-xxsm, vars.$black);
+    padding: 0;
 }
 
 .search-btn{
     @include mixins.set-icon-button(vars.$fs-xxxsm);
+}
+
+.user-btn{
+    @include mixins.set-mix-button();
+    margin: 0;
+    padding: 0;
+    &:hover .option-icon{
+        color: vars.$red;
+        cursor: pointer;
+    }
+    &:hover .user-option{
+        @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-lig, vars.$red);
+        cursor: pointer;
+    }
+    .option-icon{
+        margin: 0;
+        padding: 0;
+    }
+    .user-option{
+        @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-lig);
+        margin: 0;
+    }
+}
+
+.change-btn{
+    background: none;
+    border: none;
+    font-size: vars.$fs-xxxsm;
+    padding: 0;
+    &:hover{
+        color: vars.$red;
+        cursor: pointer;
+    }
+}
+
+.alternative-btn{
+    text-decoration: none;
+    color: vars.$red;
+    background: none;
+    border: none;
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 #menu-btn{

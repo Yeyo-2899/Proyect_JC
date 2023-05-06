@@ -36,9 +36,13 @@
 .nav-icons{
     @include mixins.row();
     margin-right: vars.$m-4;
-    gap: vars.$g-2;
+    gap: vars.$g-3;
 }
 
 .nav-search{
+    @include mixins.set-position(absolute, vars.$s-5, -50rem);
+}
+
+.nav-user{
     @include mixins.set-position(absolute, vars.$s-5, -50rem);
 }

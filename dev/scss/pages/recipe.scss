@@ -6,9 +6,11 @@
 @use '../layout/footer';
 @use '../components/search-bar';
 @use '../components/filters';
-@use '../components/user-box';
+@use '../components/user-options';
+@use '../components/user-profile';
 @use '../components/buttons';
 @use '../components/card';
+@use '../components/modal';
 @import url(../vendor/normalize.css);
 
 

@@ -1,0 +1,26 @@
+//Este archivo contiene las reglas de estilo del card que muestre opciones para el usuario durente la aplicación
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+
+
+.options{
+    @include mixins.set-card-shape(vars.$r-2, vars.$white, vars.$trans-N1);
+    padding: vars.$p-3;
+    transition: .65s ease;
+}
+
+.options.active{
+    @include mixins.set-transform();
+}
+
+.options-list{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: vars.$g-2;
+}
+
+.option-icon{
+    font-size: vars.$fs-xxsm;
+    margin: 0;
+}
