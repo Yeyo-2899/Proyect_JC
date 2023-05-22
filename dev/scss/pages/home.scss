@@ -21,17 +21,37 @@
 //Reglas del section description
 .description{
     @include mixins.set-section-bg("../../img/description.jpg");
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.row();
+        justify-content: center;
+    }
 }
 
 .description-container{
     margin-left: vars.$m-7;
     max-width: 80vh;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.row();
+        flex-direction: column;
+        justify-items: center;
+        margin: 0;
+    }
 }
 
 .description-title{
     @include mixins.set-font(vars.$fs-xxxlg, vars.$fw-bol, vars.$white);
     margin: 0;
     margin-bottom: vars.$m-4;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.set-font(vars.$fs-xxlg, vars.$fw-bol, vars.$white);
+        margin-bottom: vars.$m-4;
+    }
 }
 
 .description-text{
@@ -40,6 +60,18 @@
     margin-bottom: vars.$m-4;
     .highlighter{
         @include mixins.set-font(vars.$fs-xsm, vars.$fw-med, vars.$red);
+
+        //***Media Querie***
+        @include mixins.respond-to(vars.$phone){
+            @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-med, vars.$red);
+        }
+    }
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-med, vars.$white);
+        max-width: 80%;
+        text-align: justify;
     }
 }
 
