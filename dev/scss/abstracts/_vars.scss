@@ -30,16 +30,16 @@ $trans-R1: rgba(216,45,65,.8);
 $trans-W1: rgba(255,255,255,.7);
 
 //Font Size
-$fs-xxxsm: 1.331rem; //16pt
-$fs-xxsm: 1.5rem; //18pt
-$fs-xsm: 1.667rem; //20pt
-$fs-sm: 2rem; //24pt
+$fs-xxxsm: 1rem; //16pt
+$fs-xxsm: 1.4rem; //18pt
+$fs-xsm: 1.5rem; //20pt
+$fs-sm: 1.8rem; //24pt
 $fs-med: 2.5rem; //30pt
 $fs-big: 2.833rem; //34pt
 $fs-lg: 3rem; //36pt
 $fs-xlg: 3.333rem; //40pt
 $fs-xxlg: 3.667rem; //44pt
-$fs-xxxlg: 9.166rem; //110pt
+$fs-xxxlg: 8rem; //110pt
 
 //Margin
 $m-1: .469rem; //7.5px
@@ -87,3 +87,11 @@ $g-1: .469rem; //7.5px
 $g-2: .938rem; //15px
 $g-3: 1.875rem; //30px
 $g-4: 3.75rem; //60px
+
+//Display Size
+$phone : '(max-width: 480px)';
+$tablet-portrait: '(max-width: 767px)';
+$tablet-landscape: '(min-width: 768px) and (max-width: 979px)';
+$large-desktop: '(min-width: 1200px)';
+$non-retina: 'screen and (-webkit-max-device-pixel-ratio: 1)';
+$retina: '(min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5),(min-resolution: 144dpi), (min-resolution: 1.5dppx)';

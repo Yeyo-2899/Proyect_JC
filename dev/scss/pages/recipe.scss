@@ -53,7 +53,7 @@
 }
 
 .title{
-    @include mixins.set-font(vars.$fs-xxlg, vars.$fw-bol, vars.$red);
+    @include mixins.set-font(vars.$fs-xlg, vars.$fw-bol, vars.$red);
     margin: 0;
     margin-left: vars.$m-4;
 }
@@ -95,7 +95,7 @@
 }
 
 .data-info{
-    @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-lig);
+    @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-reg);
     margin: 0;
     margin-bottom: vars.$m-1;
     margin-left: vars.$m-2;
@@ -106,12 +106,12 @@
 }
 
 .subtitle{
-    @include mixins.set-font(vars.$fs-lg, vars.$fw-bol, vars.$red);
+    @include mixins.set-font(vars.$fs-big, vars.$fw-bol, vars.$red);
     margin: 0;
 }
 
 .description{
-    @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-lig);
+    @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-reg);
     margin: 0;
     margin-top: vars.$m-3;
 }
@@ -133,20 +133,18 @@
 }
 
 .requirement-title{
-    @include mixins.set-font(vars.$fs-med, vars.$fw-bol, vars.$red);
+    @include mixins.set-font(vars.$fs-sm, vars.$fw-bol, vars.$red);
     margin: 0;
     margin-bottom: vars.$m-2;
 }
 
+
 .requirement-list{
+    @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-reg);
+    @include mixins.row();
     margin: 0;
     padding: 0;
     margin-left: vars.$m-2;
-}
-
-.requirement-list{
-    @include mixins.set-font(vars.$fs-xxsm, vars.$fw-lig);
-    @include mixins.row();
     align-items: flex-start;
     flex-direction: column;
     gap: vars.$g-1;

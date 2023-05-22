@@ -9,10 +9,21 @@
     margin-top: vars.$m-2;
     width: vars.$s-10;
     transition: .65s ease;
+
+    
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        width: 98%;
+    }
 }
 
 .filter-box.active{
-    @include mixins.set-transform();
+    @include mixins.set-transformX();
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.set-transformY();
+    }
 }
 
 .filter-title{
@@ -24,7 +35,6 @@
     list-style: none;
     margin: 0;
     margin-bottom: vars.$m-2;
-
 }
 
 .filter-list-item{

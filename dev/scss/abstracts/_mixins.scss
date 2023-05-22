@@ -70,8 +70,13 @@
 }
 
 //Este mixin ayuda a definir una transformación de un elemento
-@mixin set-transform($distance : -53.75rem){
-    transform: translate($distance);
+@mixin set-transformX($distance : -53.75rem){
+    transform: translateX($distance);
+}
+
+//Este mixin ayuda a definir una transformación de un elemento en el eje Y
+@mixin set-transformY($distance : 53rem){
+    transform: translateY($distance);
 }
 
 //Este mixin ayuda a definir reglas de estilo para botones que contengan texto adentro
@@ -98,4 +103,11 @@
     gap: vars.$g-2;
     background: none;
     border: none;
+}
+
+//Este mixins se encarga de definir media queries en base a el parametro que indica el tamaño de pantalla
+@mixin respond-to($media) { 
+    @media only screen and #{$media} { 
+        @content;
+    }
 }

@@ -18,7 +18,6 @@
     @include mixins.set-section-bg("../../img/home.jpg");
 }
 
-
 //Reglas del section description
 .description{
     @include mixins.set-section-bg("../../img/description.jpg");
@@ -54,6 +53,7 @@
 
 .title-container{
     @include mixins.row();
+    align-items: flex-end;
     width: 100%;
     justify-content: space-between;
     margin-top: vars.$m-5;
@@ -73,5 +73,5 @@
 
 .most-voted-container{
     width: 100%;
-    @include mixins.grid(vars.$g-2, 18.3);
+    @include mixins.grid(vars.$g-2, 18);
 }

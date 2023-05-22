@@ -61,6 +61,11 @@
 
 #menu-btn{
     display: none;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        display: inline-block;
+    }
 }
 
 .like-btn{

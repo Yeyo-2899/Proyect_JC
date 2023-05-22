@@ -5,11 +5,18 @@
 .header{
     @include mixins.row();
     @include mixins.set-position(fixed, vars.$s-4, 0, 0, 1000);
+    transform: translateY(-1rem)
 }
 
 .logo{
     @include mixins.set-font(vars.$fs-xlg, vars.$fw-ext, vars.$red);
     margin-left: vars.$m-4;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.set-font(vars.$fs-sm, vars.$fw-ext, vars.$red);
+        margin-left: vars.$m-2;
+    }
 }
 
 .nav{
@@ -18,6 +25,11 @@
     padding: vars.$p-2 0;
     position: absolute;
     width: 100%;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        padding: 0;
+    }
 }
 
 .nav-items{
@@ -26,23 +38,75 @@
     padding: 0;
     margin-right: vars.$m-7;
     gap: vars.$g-4;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.set-position(fixed, -25rem, 0, 0, 20);
+        @include mixins.set-card-shape(vars.$r-3, vars.$white, vars.$trans-N2);
+        width: 100%;
+        height: calc(50vh - 9.5rem);
+        flex-direction:column;
+        justify-content: center;
+        transition: top .5s ease;
+        gap: vars.$g-3;
+        margin: 0;
+    }
+}
+
+.nav-items.active{
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        top: vars.$s-3
+    }
 }
 
 .nav-item{
     @include mixins.set-font(vars.$fs-xxsm, vars.$fw-lig);
     @include mixins.hover();
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        padding: vars.$p-2 0;
+    }
 }
 
 .nav-icons{
     @include mixins.row();
     margin-right: vars.$m-4;
     gap: vars.$g-3;
+
+    .fa-solid{
+        margin: 0;
+    }
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        margin: 0;
+        margin-right: vars.$m-2;
+        gap: vars.$g-2;
+    }
+
 }
 
 .nav-search{
     @include mixins.set-position(absolute, vars.$s-5, -50rem);
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.set-position(absolute, -50rem, vars.$s-2);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
 }
 
 .nav-user{
     @include mixins.set-position(absolute, vars.$s-5, -50rem);
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.set-position(absolute, -50rem, vars.$s-2);
+    }
+
 }

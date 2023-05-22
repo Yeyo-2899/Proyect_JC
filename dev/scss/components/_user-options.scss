@@ -10,7 +10,13 @@
 }
 
 .options.active{
-    @include mixins.set-transform();
+    @include mixins.set-transformX();
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.set-transformY();
+    }
+ 
 }
 
 .options-list{
