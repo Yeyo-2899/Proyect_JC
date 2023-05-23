@@ -18,6 +18,11 @@
     @include mixins.row();
     justify-content: space-between;
     transition: top .5s ease;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.set-font(vars.$fs-xxsm, vars.$fw-sem);
+    }
 }
 
 .modal-header.active{
@@ -29,6 +34,12 @@
     width: 60vh;
     justify-content: center;
     padding: vars.$p-4 vars.$p-4;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        margin: 0 vars.$m-3;
+        padding: vars.$p-3;
+    }
 }
 
 .form-title{
@@ -37,10 +48,20 @@
     margin-bottom: vars.$m-3;
     display: flex;
     justify-content: center;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.set-font(vars.$fs-med, vars.$fw-ext, vars.$white);
+    }
 }
 
 .form{
     margin: 0 vars.$m-4;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        margin: 0;
+    }
 }
 
 .input-content{
@@ -49,6 +70,11 @@
     align-items: center;
     padding: vars.$p-2 vars.$p-2;
     margin-bottom: vars.$m-3;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        margin-bottom: vars.$m-2;
+    }
 }
 
 .modal-icon{
@@ -64,6 +90,11 @@
     background: transparent;
     border: none;
     width: 100%;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-reg, vars.$white);
+    }
 }
 
 .submit{

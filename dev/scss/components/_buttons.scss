@@ -57,6 +57,11 @@
     &:hover{
         cursor: pointer;
     }
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        padding: 0;
+    }
 }
 
 #menu-btn{
@@ -70,6 +75,13 @@
 
 .like-btn{
     @include mixins.set-icon-button(vars.$fs-xxsm, vars.$black);
+
+    
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .skip-btn{
@@ -77,4 +89,9 @@
     font-weight: vars.$fs-sm;
     margin-right: vars.$m-4;
     padding: 0;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        margin-right: vars.$m-3;
+    }
 }

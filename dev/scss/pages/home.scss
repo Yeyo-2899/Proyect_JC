@@ -81,6 +81,11 @@
     @include mixins.set-section-bg("../../img/most_voted.jpg", 1, vars.$trans-N4);
     flex-direction: column;
     padding: 0 vars.$p-7 vars.$p-5 vars.$p-7 ;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        padding: 0 0 vars.$p-3 0;
+    }
 }
 
 .title-container{
@@ -90,17 +95,30 @@
     justify-content: space-between;
     margin-top: vars.$m-5;
     margin-bottom: vars.$m-4;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        margin-top: vars.$m-4;
+        padding: 0;
+        margin-left: vars.$m-3;
+    }
 }
 
 .most-voted-title{
     @include mixins.set-font(vars.$fs-xxxlg, vars.$fw-bol, vars.$white);
     margin: 0;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.set-font(vars.$fs-xxlg, vars.$fw-bol, vars.$white);
+    }
 }
 
 .recipebook-link{
     @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-lig, vars.$white);
     margin: 0;
     @include mixins.hover();
+
 }
 
 .most-voted-container{
