@@ -18,11 +18,22 @@
     flex-direction: column;
     align-items: flex-start;
     padding: vars.$p-6 vars.$p-8 vars.$p-5 vars.$p-8;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        padding: vars.$p-4 0 vars.$p-5 0;
+    }
 }
 
 .recipe-book-title{
     @include mixins.set-font(vars.$fs-big, vars.$fw-sem, vars.$red);
     margin-bottom: vars.$m-3;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.set-font(vars.$fs-sm, vars.$fw-sem, vars.$red);
+        margin: vars.$m-4 0 vars.$m-2 vars.$m-3;
+    }
 }
 
 .recipes-container{
