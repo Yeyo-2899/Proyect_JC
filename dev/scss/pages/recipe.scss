@@ -17,6 +17,11 @@
 .recipe{
     @include mixins.set-section-bg("../../img/recipe-book.jpg",1, vars.$trans-W1);
     padding: vars.$p-6 vars.$p-9 vars.$p-4 vars.$p-9;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        padding: vars.$p-5 vars.$p-2 vars.$p-4 vars.$p-2;
+    }
 }
 
 .recipe-panel{
@@ -35,6 +40,11 @@
     width: 100%;
     height: vars.$s-10;
     border-bottom: 0.4rem solid vars.$red;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        height: vars.$s-9;
+    }
 }
 
 .img-recipe-panel{
@@ -56,27 +66,56 @@
     @include mixins.set-font(vars.$fs-xlg, vars.$fw-bol, vars.$red);
     margin: 0;
     margin-left: vars.$m-4;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.set-font(vars.$fs-sm, vars.$fw-bol, vars.$red);
+        margin-left: vars.$m-2;
+    }
 }
 
 .likes-count{
     @include mixins.row();
     margin-right: vars.$m-4;
     gap: vars.$g-2;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        margin-right: vars.$m-2;
+    }
 }
 
 .likes-amount{
     @include mixins.set-font(vars.$fs-sm, vars.$fw-sem);
     margin: 0; 
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.set-font(vars.$fs-xsm, vars.$fw-sem);
+    }
 }
 
 .info-container{
     @include mixins.row();
     align-items: flex-start;
     margin: vars.$m-3 vars.$m-4 0 vars.$m-4;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.row();
+        flex-direction: column;
+        align-items: flex-start;
+        margin: vars.$m-3 vars.$m-3 vars.$m-2 vars.$m-3;
+    }
 }
 
 .data{
     margin-left: vars.$m-3;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        margin: 0;
+    }
 }
 
 .data-list{
@@ -103,17 +142,32 @@
 
 .description-container{
     margin: vars.$m-3 + vars.$m-2 vars.$m-4;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        margin: vars.$m-3 vars.$m-2;
+    }
 }
 
 .subtitle{
     @include mixins.set-font(vars.$fs-big, vars.$fw-bol, vars.$red);
     margin: 0;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.set-font(vars.$fs-sm, vars.$fw-bol, vars.$red);
+    }
 }
 
 .description{
     @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-reg);
     margin: 0;
     margin-top: vars.$m-3;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        margin: vars.$m-3 vars.$m-2 vars.$m-2 vars.$m-2;
+    }
 }
 
 .requirements-box{
@@ -125,6 +179,13 @@
     @include mixins.row();
     margin: 0 vars.$m-5;
     padding: vars.$p-3 vars.$p-4 0 vars.$p-4;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        flex-direction: column;
+        margin: 0 vars.$m-2;
+        padding: vars.$p-3;
+    }
 }
 
 .requirements-container{
@@ -138,16 +199,20 @@
     margin-bottom: vars.$m-2;
 }
 
-
 .requirement-list{
     @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-reg);
     @include mixins.row();
     margin: 0;
     padding: 0;
-    margin-left: vars.$m-2;
+    margin: 0 vars.$m-2;
     align-items: flex-start;
     flex-direction: column;
     gap: vars.$g-1;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        margin: 0 vars.$m-1;
+    }
 }
 
 .relateds-container{
@@ -155,9 +220,19 @@
     width: 100%;
     margin: vars.$m-4 0;
     flex-direction: column;
+    
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        margin: vars.$m-2 + vars.$m-3 0;
+    }
 }
 
 .relateds{
     @include mixins.grid(vars.$g-2, 15);
     margin: vars.$m-3 vars.$m-4 0 vars.$m-4;
+
+    //***Media Querie***
+    @include mixins.respond-to(vars.$phone){
+        margin: vars.$m-2 0 0 0;
+    }
 }

@@ -989,6 +989,11 @@ body {
   background-position: center;
   padding: 8.125rem 22.5rem 3.75rem 22.5rem;
 }
+@media only screen and (max-width: 480px) {
+  .recipe {
+    padding: 7.5rem 0.938rem 3.75rem 0.938rem;
+  }
+}
 
 .recipe-panel {
   display: -webkit-box;
@@ -1026,6 +1031,11 @@ body {
   height: 22.5rem;
   border-bottom: 0.4rem solid #d82d41;
 }
+@media only screen and (max-width: 480px) {
+  .image-container {
+    height: 11.875rem;
+  }
+}
 
 .img-recipe-panel {
   width: 100%;
@@ -1057,6 +1067,15 @@ body {
   margin: 0;
   margin-left: 3.75rem;
 }
+@media only screen and (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #d82d41;
+    text-decoration: none;
+    margin-left: 0.938rem;
+  }
+}
 
 .likes-count {
   display: -webkit-box;
@@ -1068,6 +1087,11 @@ body {
   margin-right: 3.75rem;
   gap: 0.938rem;
 }
+@media only screen and (max-width: 480px) {
+  .likes-count {
+    margin-right: 0.938rem;
+  }
+}
 
 .likes-amount {
   font-size: 1.8rem;
@@ -1075,6 +1099,14 @@ body {
   color: #2d2d2d;
   text-decoration: none;
   margin: 0;
+}
+@media only screen and (max-width: 480px) {
+  .likes-amount {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d2d2d;
+    text-decoration: none;
+  }
 }
 
 .info-container {
@@ -1089,9 +1121,32 @@ body {
           align-items: flex-start;
   margin: 1.875rem 3.75rem 0 3.75rem;
 }
+@media only screen and (max-width: 480px) {
+  .info-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin: 1.875rem 1.875rem 0.938rem 1.875rem;
+  }
+}
 
 .data {
   margin-left: 1.875rem;
+}
+@media only screen and (max-width: 480px) {
+  .data {
+    margin: 0;
+  }
 }
 
 .data-list {
@@ -1127,6 +1182,11 @@ body {
 .description-container {
   margin: 2.813rem 3.75rem;
 }
+@media only screen and (max-width: 480px) {
+  .description-container {
+    margin: 1.875rem 0.938rem;
+  }
+}
 
 .subtitle {
   font-size: 2.833rem;
@@ -1134,6 +1194,14 @@ body {
   color: #d82d41;
   text-decoration: none;
   margin: 0;
+}
+@media only screen and (max-width: 480px) {
+  .subtitle {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #d82d41;
+    text-decoration: none;
+  }
 }
 
 .description {
@@ -1143,6 +1211,11 @@ body {
   text-decoration: none;
   margin: 0;
   margin-top: 1.875rem;
+}
+@media only screen and (max-width: 480px) {
+  .description {
+    margin: 1.875rem 0.938rem 0.938rem 0.938rem;
+  }
 }
 
 .requirements-box {
@@ -1163,6 +1236,16 @@ body {
           align-items: center;
   margin: 0 7.5rem;
   padding: 1.875rem 3.75rem 0 3.75rem;
+}
+@media only screen and (max-width: 480px) {
+  .requirements-card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 0.938rem;
+    padding: 1.875rem;
+  }
 }
 
 .requirements-container {
@@ -1192,7 +1275,7 @@ body {
           align-items: center;
   margin: 0;
   padding: 0;
-  margin-left: 0.938rem;
+  margin: 0 0.938rem;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -1201,6 +1284,11 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0.469rem;
+}
+@media only screen and (max-width: 480px) {
+  .requirement-list {
+    margin: 0 0.469rem;
+  }
 }
 
 .relateds-container {
@@ -1217,6 +1305,11 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+@media only screen and (max-width: 480px) {
+  .relateds-container {
+    margin: 2.813rem 0;
+  }
+}
 
 .relateds {
   display: -ms-grid;
@@ -1224,4 +1317,9 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 0.938rem;
   margin: 1.875rem 3.75rem 0 3.75rem;
+}
+@media only screen and (max-width: 480px) {
+  .relateds {
+    margin: 0.938rem 0 0 0;
+  }
 }
