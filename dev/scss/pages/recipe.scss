@@ -142,6 +142,7 @@
 
 .description-container{
     margin: vars.$m-3 + vars.$m-2 vars.$m-4;
+    width: 90%;
 
     //***Media Querie***
     @include mixins.respond-to(vars.$phone){

@@ -29,12 +29,44 @@ app.component('recipe-card', {
     },
     data(){
         return{
-        
+            recipes:[
+                {id: '1', name: 'Pork Ribs', prep_time: '15 min', cook_time: '20 min', total_time: '35 min', portions: '2', complexity: 'Easy', occasion: 'Summer',  category: 'Lunch', description: 'No description for now.', ingredients: 'Only one ingredient for now', instructions: 'Only one instruction for now', img: '../img/pork_ribs.jpg', likes: 12},
+            ]
         }
+    },
+    mounted:function() {
+
+
+        axios({  
+            method: 'get', 
+            url:'https://www.themealdb.com/api/json/v1/1/list.php?c=Seafood'
+        })
+        .then(
+            (response) => {
+                let items = response.data.meals;
+
+                this.recipes = [];
+
+                items.forEach(element =>{
+                    this.recipes.push({
+                        id: element.idMeal,
+                        name:element.strMeal,
+                        total_time: "20 mins",
+                        category: 'Seafood',
+                        description: "No description for now",
+                        likes: 18
+                    });
+                });
+
+            }
+        )
+        .catch(
+            error => console.log(error)
+        );
     },
     template:
     /*html*/
-    `<a href="./html/recipe.html" class="recipe-card">
+    `<a href="./recipe.html" class="recipe-card">
     <div class="recipe-img">
         <img class="img" v-bind:src="image" alt="image">
     </div>
