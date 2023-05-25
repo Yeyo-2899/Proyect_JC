@@ -189,7 +189,7 @@
    
    <!--Section Recipe-->
    <section id="recipe" class="recipe">
-       <recipe-details :name="recipes_test[0].name" :prep_time="recipes_test[0].prep_time" :cook_time="recipes_test.cook_time" :total_time="recipes_test[0].total_time" :portions="recipes_test[0].portions" :complexity="recipes_test[0].complexity" :occasion="recipes_test[0].occasion" :category="recipes_test[0].category" :description="recipes_test[0].description" :ingredients="recipes_test[0].ingredients" :instructions="recipes_test[0].instructions" :image="recipes_test[0].img" :likes="recipes_test[0].likes"></recipe-details>
+       <recipe-details></recipe-details>
    </section>
    <!--Section Recipe-->
 
@@ -224,9 +224,11 @@
     <script src="../js/components/RecipeDetails.js"></script>
     <!--Components JS-->
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <!--Mounted App-->
     <script>
-        const mountedApp = app.mount("#app");
+        const mountedApp = app.mount("#app");        
     </script>
     <!--Mounted App-->>
 </body>

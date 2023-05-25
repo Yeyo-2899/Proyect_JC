@@ -13,6 +13,11 @@ const app = Vue.createApp({
                 {id: '9', name: 'Tomato Pasta', prep_time: '15 min', cook_time: '20 min', total_time: '35 min', portions: '2', complexity: 'Easy', occasion: 'Summer',  category: 'Lunch', description: 'No description for now.', ingredients: 'Only one ingredient for now', instructions: 'Only one instruction for now', img: '../img/tomato_pasta.jpg', likes: 12},
                 {id: '10', name: 'Pork Ribs', prep_time: '15 min', cook_time: '20 min', total_time: '35 min', portions: '2', complexity: 'Easy', occasion: 'Summer',  category: 'Lunch', description: 'No description for now.', ingredients: 'Only one ingredient for now', instructions: 'Only one instruction for now', img: '../img/pork_ribs.jpg', likes: 12},
             ]*/
+
+            recipe_id: ""
         }
+    },
+    mounted:function() {
+        
     },
 })

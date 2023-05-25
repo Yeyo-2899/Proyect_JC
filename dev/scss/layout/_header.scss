@@ -39,7 +39,11 @@
     margin-right: vars.$m-7;
     gap: vars.$g-4;
 
-    //***Media Querie***
+    //***Media Queries***
+    @include mixins.respond-to(vars.$large-desktop){
+        margin-right: 0;
+    }
+
     @include mixins.respond-to(vars.$phone){
         @include mixins.set-position(fixed, -25rem, 0, 0, 20);
         @include mixins.set-card-shape(vars.$r-3, vars.$white, vars.$trans-N2);

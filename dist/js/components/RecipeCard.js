@@ -1,30 +1,8 @@
 app.component('recipe-card', {
     props:{
-        index:{
-            type:Number
-        },
-        name:{
-            type: String,
-            default: "recipe name"
-        },
-        total_time:{
-            type: String,
-            default: "0 min"
-        },
-        category:{
-            type: String,
-            default: "recipe category"
-        },
-        description:{
-            type: String,
-            default: "recipe description"
-        },
-        image:{
-            type: String
-        },
-        likes:{
-            type: Number,
-            default: 10
+        popular:{
+            type: Boolean,
+            default: false
         }
     },
     data(){
@@ -39,7 +17,7 @@ app.component('recipe-card', {
 
         axios({  
             method: 'get', 
-            url:'https://www.themealdb.com/api/json/v1/1/list.php?c=Seafood'
+            url:'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
         })
         .then(
             (response) => {
@@ -51,6 +29,7 @@ app.component('recipe-card', {
                     this.recipes.push({
                         id: element.idMeal,
                         name:element.strMeal,
+                        image:element.strMealThumb,
                         total_time: "20 mins",
                         category: 'Seafood',
                         description: "No description for now",
@@ -58,37 +37,45 @@ app.component('recipe-card', {
                     });
                 });
 
+                if(this.popular) this.recipes = this.getMostVoted(this.recipes); 
+                
+
             }
         )
         .catch(
             error => console.log(error)
         );
     },
+    methods:{
+        getMostVoted(items){
+            return items.slice(0,10);
+        }
+    },
     template:
     /*html*/
-    `<a href="./recipe.html" class="recipe-card">
-    <div class="recipe-img">
-        <img class="img" v-bind:src="image" alt="image">
-    </div>
-
-    <div class="title-card-container">
-        <h3 class="recipe-title">{{ name }}</h3>
-        <div class="like-container">
-            <p class="likes">{{ likes }}</p>
-            <button class="like-btn fa-regular fa-heart"></button>
+    `<a v-for="recipe in recipes" :href="'./recipe.html?id='+recipe.id" class="recipe-card">
+        <div class="recipe-img">
+            <img class="img" v-bind:src="recipe.image" alt="image">
         </div>
-    </div>
 
-    <div class="info-card-container">
-        <ul class="recipe-info">
-            <li class="recipe-info-element"><p class="icons-var fa-regular fa-clock"></p><p class="recipe-info-var">Total Time: {{ total_time }}</p></li>
-            <li class="recipe-info-element"><p class="icons-var fa-solid fa-list"></p><p class="recipe-info-var">Category: {{ category }}</p></li>
-        </ul>
-    </div>
+        <div class="title-card-container">
+            <h3 class="recipe-title">{{ recipe.name }}</h3>
+            <div class="like-container">
+                <p class="likes">{{ recipe.likes }}</p>
+                <button class="like-btn fa-regular fa-heart"></button>
+            </div>
+        </div>
 
-    <div class="description-card-container">
-        <h4 class="recipe-description-title">Description</h4>
-        <p class="recipe-description">{{ description }}</p>
-    </div>
+        <div class="info-card-container">
+            <ul class="recipe-info">
+                <li class="recipe-info-element"><p class="icons-var fa-regular fa-clock"></p><p class="recipe-info-var">Total Time: {{ recipe.total_time }}</p></li>
+                <li class="recipe-info-element"><p class="icons-var fa-solid fa-list"></p><p class="recipe-info-var">Category: {{ recipe.category }}</p></li>
+            </ul>
+        </div>
+
+        <div class="description-card-container">
+            <h4 class="recipe-description-title">Description</h4>
+            <p class="recipe-description">{{ recipe.description }}</p>
+        </div>
     </a>`
 })

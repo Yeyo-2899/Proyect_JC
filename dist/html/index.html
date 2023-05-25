@@ -219,7 +219,8 @@
             </div>
 
             <div class="most-voted-container">
-                <recipe-card v-for="card in recipes_test" :name="card.name" :total_time="card.total_time" :category="card.category" :description="card.description" :image="card.img" :likes="card.likes"></recipe-card>
+                <recipe-card :popular="true"></recipe-card>
+                <!--<recipe-card v-for="card in recipes_test" :name="card.name" :total_time="card.total_time" :category="card.category" :description="card.description" :image="card.img" :likes="card.likes"></recipe-card>-->
             </div>
         </section>
         <!--Section Most Voted-->
@@ -253,6 +254,8 @@
     <!--Components JS-->
     <script src="../js/components/RecipeCard.js"></script>
     <!--Components JS-->
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <!--Mounted App-->
     <script>

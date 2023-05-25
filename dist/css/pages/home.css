@@ -77,6 +77,11 @@ body {
   margin-right: 11.25rem;
   gap: 3.75rem;
 }
+@media only screen and (min-width: 1200px) {
+  .nav-items {
+    margin-right: 0;
+  }
+}
 @media only screen and (max-width: 480px) {
   .nav-items {
     position: fixed;
@@ -1018,6 +1023,11 @@ body {
   margin-left: 11.25rem;
   max-width: 80vh;
 }
+@media only screen and (min-width: 1200px) {
+  .description-container {
+    margin-left: 7.5rem;
+  }
+}
 @media only screen and (max-width: 480px) {
   .description-container {
     display: -webkit-box;
@@ -1067,11 +1077,27 @@ body {
   color: #d82d41;
   text-decoration: none;
 }
+@media only screen and (min-width: 1200px) {
+  .description-text .highlighter {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #d82d41;
+    text-decoration: none;
+  }
+}
 @media only screen and (max-width: 480px) {
   .description-text .highlighter {
     font-size: 1rem;
     font-weight: 500;
     color: #d82d41;
+    text-decoration: none;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .description-text {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #f8f8f8;
     text-decoration: none;
   }
 }

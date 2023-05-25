@@ -33,7 +33,11 @@
     margin-left: vars.$m-7;
     max-width: 80vh;
 
-    //***Media Querie***
+    //***Media Queries***
+    @include mixins.respond-to(vars.$large-desktop){
+        margin-left: vars.$m-5;
+    }
+
     @include mixins.respond-to(vars.$phone){
         @include mixins.row();
         flex-direction: column;
@@ -61,13 +65,21 @@
     .highlighter{
         @include mixins.set-font(vars.$fs-xsm, vars.$fw-med, vars.$red);
 
-        //***Media Querie***
+        //***Media Queries***
+        @include mixins.respond-to(vars.$large-desktop){
+            @include mixins.set-font(vars.$fs-xxsm, vars.$fw-med, vars.$red);
+        }
+
         @include mixins.respond-to(vars.$phone){
             @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-med, vars.$red);
         }
     }
 
-    //***Media Querie***
+    //***Media Queries***
+    @include mixins.respond-to(vars.$large-desktop){
+        @include mixins.set-font(vars.$fs-xxsm, vars.$fw-med, vars.$white);
+    }
+
     @include mixins.respond-to(vars.$phone){
         @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-med, vars.$white);
         max-width: 80%;
