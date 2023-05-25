@@ -26,165 +26,16 @@
     <section id="app" class="container">
 
         <!--Modal Login-->
-        <section id="modal-login" class="modal">
-            <div id="modal-header" class="modal-header">
-                <a href="" class="logo">JUSTCOOK</a>
-                <button id="skip-btn" class="skip-btn">Skip</button>
-            </div>
-
-            <div class="form-container">
-                <h1 class="form-title">Login</h1>
-                <form action="" class="form">
-                    <div class="input-content">
-                        <label class="fas fa-user-lock modal-icon"></label>
-                        <input class="modal-input" type="text" name="user_name" id="#user-login" placeholder="User">
-                    </div>
-                    <div class="input-content">
-                        <label class="fas fa-key modal-icon"></label>
-                        <input class="modal-input" type="password" name="password" id="#password-login" placeholder="Password">
-                    </div>
-                    <div class="submit">
-                        <input type="submit" vlaue="Entrar" class="primary-btn">
-                    </div>
-                </form>
-                <div class="alternative-container">
-                    <p class="alternative-text">First time? <button id="signup-btn" class="alternative-btn">Sign Up!</button></p>
-                </div>
-            </div>
-
-        </section>
+        <modal :id="modal-login" :function="'login'"></modal>
         <!--Modal Login-->
 
         <!--Modal SignUp-->
-        <section id="modal-signup" class="modal">
-            <div id="modal-header" class="modal-header">
-                <a href="" class="logo">JUSTCOOK</a>
-                <button id="skip-btn" class="skip-btn">Skip</button>
-            </div>
-
-            <div class="form-container">
-                <h1 class="form-title">Sign Up</h1>
-                <form action="" class="form">
-                    <div class="input-content">
-                        <label class="fas fa-user-lock modal-icon"></label>
-                        <input class="modal-input" type="text" name="name" id="#name" placeholder="Full Name">
-                    </div>
-                    <div class="input-content">
-                        <label class="fas fa-user-lock modal-icon"></label>
-                        <input class="modal-input" type="text" name="user_name" id="#user-signup" placeholder="User">
-                    </div>
-                    <div class="input-content">
-                        <label class="fas fa-user-lock modal-icon"></label>
-                        <input class="modal-input" type="text" name="email" id="#email" placeholder="Email">
-                    </div>
-                    <div class="input-content">
-                        <label class="fas fa-key modal-icon"></label>
-                        <input class="modal-input" type="password" name="password" id="#password-signup" placeholder="Password">
-                    </div>
-                    <div class="input-content">
-                        <label class="fas fa-key modal-icon"></label>
-                        <input class="modal-input" type="password" name="confirm-password" id="#confirm-password" placeholder="Confirm Password">
-                    </div>
-                    <div class="submit">
-                        <input type="submit" vlaue="Login" class="primary-btn">
-                    </div>
-                </form>
-                <div class="alternative-container">
-                    <p class="alternative-text">Already have account? <button id="login-btn" class="alternative-btn">Login!</button></p>
-                </div>
-            </div>
-
-        </section>
+        <modal :id="modal-signup" :function="'signin'"></modal>
         <!--Modal SignUp-->
 
 
         <!--Header-->
-        <header class="header">
-            <nav class="nav">
-                <!--Logo-->
-                <a href="./index.html" class="logo">JUSTCOOK</a>
-
-                <!--Nav Options-->
-                <ul class="nav-items"></ul>
-        
-                <!--Nav Icons-->
-                <div class="nav-icons">
-                    <a href="./index.html" class="nav-btn"><p class="fa-solid fa-house"></p></a>
-                    <button id="search-dropdown" class="nav-btn"><p class="fa-solid fa-magnifying-glass"></p></button>
-                    <button id="user-dropdown" class="nav-btn"><p class="fa-solid fa-user"></p></button>
-                    <button id="menu-btn" class="nav-btn"><p class="fa-solid fa-bars"></p></button>
-                </div>
-        
-                <!--Search Bar-->
-                <div class="nav-search">
-                    <form class="search-form" action="" role="search">
-                        <input class="search-input" type="search" id="search-input" placeholder="Search..." aria-label="Search">
-                        <div class="search-icons">
-                            <label id="filter-btn" class="search-btn fa-solid fa-filter"></label> <!--Fue necesrio cambiar esta etiqueta de button a label ya que al estar dentro de un form actualizaba la página env ez de desplegar los filtros-->
-                            <button id="search-btn" for="search-box" class="search-btn fa-solid fa-search" type="submit"></button>
-                        </div>
-                    </form>
-        
-                    <div class="filter-box">
-                            <h3 class="filter-title">Complexity</h3>
-                            <ul class="filter-list">
-                                <li class="filter-list-item"><a href="" class="filter">Easy</a></li>
-                                <li class="filter-list-item"><a href="" class="filter">Intermediate</a></li>
-                                <li class="filter-list-item"><a href="" class="filter">Advanced</a></li>
-                            </ul>
-                            <h3 class="filter-title">Categories</h3>
-                            <ul class="filter-list">
-                                <li class="filter-list-item"><a href="" class="filter">Breakfast</a></li>
-                                <li class="filter-list-item"><a href="" class="filter">Drinks</a></li>
-                                <li class="filter-list-item"><a href="" class="filter">Starter</a></li>
-                                <li class="filter-list-item"><a href="" class="filter">Lunch</a></li>
-                                <li class="filter-list-item"><a href="" class="filter">Desserts</a></li>
-                                <li class="filter-list-item"><a href="" class="filter">Soups</a></li>
-                            </ul>
-                            <h3 class="filter-title">Occasions</h3>
-                            <ul class="filter-list">
-                                <li class="filter-list-item"><a href="" class="filter">All</a></li>
-                                <li class="filter-list-item"><a href="" class="filter">Birthday</a></li>
-                                <li class="filter-list-item"><a href="" class="filter">Father's day</a></li>
-                                <li class="filter-list-item"><a href="" class="filter">Mother's Day</a></li>
-                                <li class="filter-list-item"><a href="" class="filter">Children's Day</a></li>
-                                <li class="filter-list-item"><a href="" class="filter">Christmas</a></li>
-                                <li class="filter-list-item"><a href="" class="filter">Easter</a></li>
-                                <li class="filter-list-item"><a href="" class="filter">Summer</a></li>
-                            </ul>
-                    </div>
-                </div>
-        
-                <!--User Options-->
-                <div class="nav-user">
-                    <div class="options">
-                        <div class="options-list">
-                            <button id="profile-btn" class="user-btn"><p class="option-icon fa-solid fa-user"></p><p class="user-option">My Profile</p></button>
-                            <button id="collection-btn" class="user-btn"><p class="option-icon fa-solid fa-book"></p><p class="user-option">My Collection</p></button>
-                            <button id="logout-btn" class="user-btn"><p class="option-icon fa-solid fa-right-from-bracket"></p><p class="user-option">Log Out</p></button>
-                        </div>
-                    </div>
-
-                    <div class="user-profile">
-                        <div class="user">
-                            <p class="option-icon fa-solid fa-user"></p>
-                            <h1 class="name">Jason Huertas</h1>
-                        </div>
-
-                        <ul class="info-list">
-                            <li class="info-element"><p class="user-info"> User: @jhuertas</p></li>
-                            <li class="info-element"><p class="user-info">Email: jashu@gmail.com</p></li>
-                            <li class="info-element"><p class="user-info">Pass: **********</p></li>
-                        </ul>    
-
-                        <div class="profile-options">
-                            <button id="delete-btn" class="change-btn fa-solid fa-trash"></button>
-                            <button id="edit-btn" class="change-btn fa-solid fa-pen-to-square"></button>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
+        <nav-header :page="'book'"></nav-header>
         <!--Header-->
 
         <!--Section RecipeBook-->
@@ -210,10 +61,6 @@
 
     
     <!--JAVASCRIPT IMPORTS-->
-    
-    <!--Header js-->
-    <script src="../js/header.js"></script>
-    <!--Header js-->
 
     <!--Vue js-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -225,6 +72,8 @@
 
     <!--Components JS-->
     <script src="../js/components/RecipeCard.js"></script>
+    <script src="../js/components/Header.js"></script>
+    <script src="../js/components/Modal.js"></script>
     <!--Components JS-->
 
     <!--Mounted App-->

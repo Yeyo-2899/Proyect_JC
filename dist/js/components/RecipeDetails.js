@@ -57,7 +57,7 @@ app.component('recipe-details', {
     },
     data(){
         return{
-        
+            recipe:[]
         }
     },
     mounted:function() {
