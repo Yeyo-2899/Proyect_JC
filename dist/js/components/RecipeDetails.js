@@ -62,6 +62,7 @@ app.component('recipe-details', {
                 this.likes = 12;
                     
                 console.log(this.ingredients);
+                this.getRelated();
             }
         )
         .catch(
@@ -69,41 +70,44 @@ app.component('recipe-details', {
         );
 
 
-        /*axios({
-            method: 'get',
-            url: "www.themealdb.com/api/json/v1/1/filter.php?c=" + category 
-
-        })
-        .then(
-            (response) => {
-                let items = response.data.meals;
-                console.log(response);
-                this.relateds = [];
-
-                /*items.forEach(element =>{
-                    this.relateds.push({
-                        id: element.idMeal,
-                        name:element.strMeal,
-                        image:element.strMealThumb,
-                        total_time: "20 mins",
-                        category: element.strCategory,
-                        description: "No description for now",
-                        likes: 18
-                    });
-                });
-
-                this.relateds = this.getRelateds(this.relateds);
-
-                console.log(this.relateds);
-            }
-        )
-        .catch(
-            error => console.log(error)
-        )*/
+        /**/
     },
     methods: {
         getRelateds(item){
             return item.slice(0,3);
+        },
+        getRelated(){
+            axios({
+                method: 'get',
+                url: "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + this.category 
+    
+            })
+            .then(
+                (response) => {
+                    let items = response.data.meals;
+                    console.log(response);
+                    this.relateds = [];
+    
+                    items.forEach(element =>{
+                        this.relateds.push({
+                            id: element.idMeal,
+                            name:element.strMeal,
+                            image:element.strMealThumb,
+                            total_time: "20 mins",
+                            category: element.strCategory,
+                            description: "No description for now",
+                            likes: 18
+                        });
+                    });
+    
+                    this.relateds = this.getRelateds(this.relateds);
+    
+                    console.log(this.relateds);
+                }
+            )
+            .catch(
+                error => console.log(error)
+            )
         }
     },
     template:

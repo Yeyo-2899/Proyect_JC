@@ -6,35 +6,130 @@ app.component('nav-header', {
     },
     data() {
         return {
-        navbar: document.querySelector('.nav-items'),
-        searchForm: document.querySelector('.search-form'),
-        filters:  document.querySelector('.filter-box'),
-        useroptions:  document.querySelector('.options'),
-        profile:  document.querySelector('.user-profile'),
-        modal_login: document.querySelector('#modal-login'),
-        modal_signup: document.querySelector('#modal-signup'),
-        header: document.querySelector('header'),
-        headerModal: document.querySelector('.modal-header')
+        navbar: "",
+        searchForm: "",
+        filters:  "",
+        useroptions:  "",
+        profile:  "",
+        modal_login: "",
+        modal_signup: "",
+        header: "",
+        headerModal: ""
         }
     },
     mounted:function() {
-        //console.log(this.searchForm);
-        /*window.addEventListener('scroll', function(){
-            let value = window.scrollY;
-            
-            this.header.style.marginTop = value * -0.5 + 'px';
-        })*/
+        this.navbar = document.querySelector('.nav-items'),
+        this.searchForm = document.querySelector('.search-form'),
+        this.filters =  document.querySelector('.filter-box'),
+        this.useroptions =  document.querySelector('.options'),
+        this.profile =  document.querySelector('.user-profile'),
+        this.modal_login = document.querySelector('#modal-login'),
+        this.modal_signup = document.querySelector('#modal-signup'),
+        this.headerModal = document.querySelector('.modal-header')
 
-        /*document.querySelector('#search-dropdown').onclick = () =>{
-            this.searchForm.classList.toggle('active');
-            this.navbar.classList.remove('active');
-            this.filters.classList.remove('active');
-            this.useroptions.classList.remove('active');
-            this.profile.classList.remove('active');
-        }*/
+        this.scrollP();
+        this.menuDrop();
+        this.searchDrop();
+        this.userDrop();
+        this.profileDrop();
+        this.skip();
+        this.filterDrop();
+        this.search();
+        this.navItems();
+        this.logOut();
+        this.signUp();
+        this.logIn();
     },
     methods: {
-        
+        scrollP(){
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                
+                let header = document.querySelector('.header')
+                console.log(header);
+                header.style.marginTop = value * -0.5 + 'px';
+            })
+        },
+        searchDrop(){
+            document.querySelector('#search-dropdown').onclick = () =>{
+                this.searchForm.classList.toggle('active');
+                this.navbar.classList.remove('active');
+                this.filters.classList.remove('active');
+                this.useroptions.classList.remove('active');
+                this.profile.classList.remove('active');
+            }
+        },
+        menuDrop(){
+            document.querySelector('#menu-btn').onclick = () =>{
+                this.navbar.classList.toggle('active');
+                this.searchForm.classList.remove('active');
+                this.filters.classList.remove('active');
+                this.useroptions.classList.remove('active');
+                this.profile.classList.remove('active');
+            }
+        },
+        userDrop(){
+            document.querySelector('#user-dropdown').onclick = () =>{
+                this.useroptions.classList.toggle('active');
+                this.navbar.classList.remove('active');
+                this.filters.classList.remove('active');
+                this.searchForm.classList.remove('active');
+                this.profile.classList.remove('active');
+            }
+        },
+        profileDrop(){
+            document.querySelector('#profile-btn').onclick = () =>{
+                this.profile.classList.toggle('active');
+            }
+        },
+        skip(){
+            document.querySelector('#skip-btn').onclick = () =>{
+                this.modal_login.classList.remove('active');
+                this.modal_signup.classList.remove('active');
+                this.headerModal.classList.remove('active');
+            }
+        },
+        filterDrop(){
+            document.querySelector('#filter-btn').onclick = () =>{
+                this.filters.classList.toggle('active');
+                this.navbar.classList.remove('active');
+            }
+        },
+        search(){
+            document.querySelector('#search-btn').onclick = () =>{
+                this.filters.classList.remove('active');
+            }
+        },
+        navItems(){
+            document.querySelector('.nav-items').onclick = () =>{
+                this.navbar.classList.remove('active');
+            }
+        },
+        logOut(){
+            document.querySelector('#logout-btn').onclick = () =>{
+                this.modal_login.classList.toggle('active');
+                this.headerModal.classList.toggle('active');
+                this.useroptions.classList.remove('active');
+                this.profile.classList.remove('active');
+                this.navbar.classList.remove('active');
+                this.filters.classList.remove('active');
+                this.searchForm.classList.remove('active');
+            }
+        },
+        signUp(){
+            document.querySelector('#signup-btn').onclick = () =>{
+                this.modal_signup.classList.toggle('active');
+                this.headerModal.classList.toggle('active');
+                this.modal_login.classList.remove('active');
+            }
+        },
+        logIn(){
+            document.querySelector('#login-btn').onclick = () =>{
+                this.modal_login.classList.toggle('active');
+                this.headerModal.classList.toggle('active');
+                this.modal_signup.classList.remove('active');
+            }
+        }
         
     },
     template:
