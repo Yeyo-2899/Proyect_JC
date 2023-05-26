@@ -178,6 +178,7 @@
 .requirements-card{
     @include mixins.set-card-shape(vars.$r-3, vars.$trans-N1);
     @include mixins.row();
+    align-items: flex-start;
     margin: 0 vars.$m-5;
     padding: vars.$p-3 vars.$p-4 0 vars.$p-4;
 
@@ -230,7 +231,7 @@
 
 .relateds{
     @include mixins.grid(vars.$g-2, 15);
-    margin: vars.$m-3 vars.$m-4 0 vars.$m-4;
+    margin: vars.$m-3 vars.$m-1 0 vars.$m-1;
 
     //***Media Querie***
     @include mixins.respond-to(vars.$phone){

@@ -18,7 +18,7 @@ app.component('nav-header', {
         }
     },
     mounted:function() {
-        console.log(this.searchForm);
+        //console.log(this.searchForm);
         /*window.addEventListener('scroll', function(){
             let value = window.scrollY;
             

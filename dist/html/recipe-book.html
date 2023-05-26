@@ -26,11 +26,11 @@
     <section id="app" class="container">
 
         <!--Modal Login-->
-        <modal :id="modal-login" :function="'login'"></modal>
+        <modal :id="'modal-login'" :purpose="'login'"></modal>
         <!--Modal Login-->
 
         <!--Modal SignUp-->
-        <modal :id="modal-signup" :function="'signin'"></modal>
+        <modal :id="'modal-signup'" :purpose="'signin'"></modal>
         <!--Modal SignUp-->
 
 
@@ -42,7 +42,7 @@
         <section id="recipe-book" class="recipe-book">
             <h1 class="recipe-book-title">All Recipes</h1>
             <div class="recipes-container">
-                <recipe-card v-for="card in recipes" :name="card.name" :total_time="card.total_time" :category="card.category" :description="card.description" :image="card.img" :likes="card.likes"></recipe-card>
+                <recipe-card></recipe-card>
             </div>
         </section>
         <!--Section RecipeBook-->
@@ -75,6 +75,10 @@
     <script src="../js/components/Header.js"></script>
     <script src="../js/components/Modal.js"></script>
     <!--Components JS-->
+
+    <!--Axios para JS-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!--Axios para JS-->
 
     <!--Mounted App-->
     <script>

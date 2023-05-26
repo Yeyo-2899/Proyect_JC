@@ -14,7 +14,7 @@ app.component('recipe-card', {
     },
     mounted:function() {
 
-
+    
         axios({  
             method: 'get', 
             url:'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
@@ -31,7 +31,7 @@ app.component('recipe-card', {
                         name:element.strMeal,
                         image:element.strMealThumb,
                         total_time: "20 mins",
-                        category: 'Seafood',
+                        category: element.strCategory,
                         description: "No description for now",
                         likes: 18
                     });

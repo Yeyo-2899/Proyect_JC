@@ -1235,6 +1235,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin: 0 7.5rem;
   padding: 1.875rem 3.75rem 0 3.75rem;
 }
@@ -1317,7 +1320,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 0.938rem;
-  margin: 1.875rem 3.75rem 0 3.75rem;
+  margin: 1.875rem 0.469rem 0 0.469rem;
 }
 @media only screen and (max-width: 480px) {
   .relateds {
