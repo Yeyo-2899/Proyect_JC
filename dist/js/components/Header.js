@@ -60,12 +60,14 @@ app.component('nav-header', {
             }
         },
         menuDrop(){
-            document.querySelector('#menu-btn').onclick = () =>{
-                this.navbar.classList.toggle('active');
-                this.searchForm.classList.remove('active');
-                this.filters.classList.remove('active');
-                this.useroptions.classList.remove('active');
-                this.profile.classList.remove('active');
+            if(this.page === 'home'){
+                document.querySelector('#menu-btn').onclick = () =>{
+                    this.navbar.classList.toggle('active');
+                    this.searchForm.classList.remove('active');
+                    this.filters.classList.remove('active');
+                    this.useroptions.classList.remove('active');
+                    this.profile.classList.remove('active');
+                }
             }
         },
         userDrop(){
@@ -97,12 +99,19 @@ app.component('nav-header', {
         },
         search(){
             document.querySelector('#search-btn').onclick = () =>{
-                this.filters.classList.remove('active');
+                let inputWord = document.getElementById("search-input");
+                let keyword = inputWord.value;
+
+                window.location.href = "./recipe-book.html"; //DUDA
+                
+                //this.filters.classList.remove('active');
             }
         },
         navItems(){
-            document.querySelector('.nav-items').onclick = () =>{
-                this.navbar.classList.remove('active');
+            if(this.page === 'home'){
+                document.querySelector('.nav-items').onclick = () =>{
+                    this.navbar.classList.remove('active');
+                }
             }
         },
         logOut(){

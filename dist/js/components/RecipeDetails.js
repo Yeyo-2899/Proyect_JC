@@ -19,6 +19,8 @@ app.component('recipe-details', {
            instructions:"", 
            likes: 12,
            recipe: "",
+           
+           saved: false,
 
            relateds: [{id: '1', name: 'Pork Ribs', total_time: '35 min', category: 'Lunch', img: '../img/mojito.jpg', likes: 12}, {id: '1', name: 'Pork Ribs', total_time: '35 min', category: 'Lunch', img: '../img/mojito.jpg', likes: 12},{id: '1', name: 'Pork Ribs', total_time: '35 min', category: 'Lunch', img: '../img/mojito.jpg', likes: 12}]
         }
@@ -108,6 +110,11 @@ app.component('recipe-details', {
             .catch(
                 error => console.log(error)
             )
+        },
+        vote(){
+            console.log("me escuchan");
+            this.likes++;
+            this.saved = true;
         }
     },
     template:
@@ -122,7 +129,7 @@ app.component('recipe-details', {
                 <h1 class="title"> {{name}} </h1>
                 <div class="likes-count">
                     <p class="likes-amount"> {{likes}} </p>
-                    <button class="like-btn fa-regular fa-heart"></button>
+                    <button class="like-btn fa-regular fa-heart" v-on:click="vote()"></button>
                 </div>
             </div>
             <div class="info-container">

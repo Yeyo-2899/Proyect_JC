@@ -49,6 +49,12 @@ app.component('recipe-card', {
     methods:{
         getMostVoted(items){
             return items.slice(0,10);
+        },
+        vote(index){
+            console.log("me escuchan?");
+            for(i in recipes){
+                if(recipes[i].id === index) recipes[i].likes++;
+            }
         }
     },
     template:
@@ -62,7 +68,7 @@ app.component('recipe-card', {
             <h3 class="recipe-title">{{ recipe.name }}</h3>
             <div class="like-container">
                 <p class="likes">{{ recipe.likes }}</p>
-                <button class="like-btn fa-regular fa-heart"></button>
+                <button class="like-btn fa-regular fa-heart" v-on:click="vote(recipe.id)"></button>
             </div>
         </div>
 

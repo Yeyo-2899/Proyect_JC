@@ -232,6 +232,7 @@
 .relateds{
     @include mixins.grid(vars.$g-2, 15);
     margin: vars.$m-3 vars.$m-1 0 vars.$m-1;
+    width: 90%;
 
     //***Media Querie***
     @include mixins.respond-to(vars.$phone){
