@@ -4,7 +4,7 @@
 
 .modal{
     @include mixins.set-section-bg("../../img/login.jpg", 1, vars.$trans-N2);
-    @include mixins.set-position(fixed, -62rem, 0, 0, 1100);
+    @include mixins.set-position(fixed, -80rem, 0, 0, 1100);
     justify-content: center;
     transition: top .5s ease;
 }
@@ -30,13 +30,13 @@
 }
 
 .form-container{
-    @include mixins.set-card-shape(vars.$r-3, vars.$trans-N3);
+    @include mixins.set-glassmor(vars.$r-3, vars.$trans-W2);
     width: 60vh;
     justify-content: center;
     padding: vars.$p-4 vars.$p-4;
 
     //***Media Querie***
-    @include mixins.respond-to(vars.$phone){
+    @include mixins.respond-to(vars.$tablet-landscape){
         margin: 0 vars.$m-3;
         padding: vars.$p-3;
     }

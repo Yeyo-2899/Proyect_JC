@@ -28,6 +28,7 @@ $trans-N4: rgba(0,0,0,.45);
 $trans-N5: rgba(0,0,0,.55);
 $trans-R1: rgba(216,45,65,.8);
 $trans-W1: rgba(255,255,255,.7);
+$trans-W2: rgba(255,255,255,.08);
 
 //Font Size
 $fs-xxxsm: 1rem; //16pt
@@ -91,7 +92,7 @@ $g-4: 3.75rem; //60px
 //Display Size
 $phone : '(max-width: 480px)';
 $tablet-portrait: '(max-width: 767px)';
-$tablet-landscape: '(min-width: 768px) and (max-width: 979px)';
-$large-desktop: '(min-width: 1200px)';
+$tablet-landscape:'(max-width: 979px)';
+$large-desktop: '(max-width: 1200px)';
 $non-retina: 'screen and (-webkit-max-device-pixel-ratio: 1)';
 $retina: '(min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5),(min-resolution: 144dpi), (min-resolution: 1.5dppx)';

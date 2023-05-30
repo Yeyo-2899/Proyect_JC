@@ -13,10 +13,13 @@
     @include mixins.set-transformX();
 
     //***Media Querie***
-    @include mixins.respond-to(vars.$phone){
+    @include mixins.respond-to(vars.$tablet-landscape){
         @include mixins.set-transformY();
     }
- 
+
+    @include mixins.respond-to(vars.$phone){
+        @include mixins.set-transformY(53rem);
+    }
 }
 
 .options-list{

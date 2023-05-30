@@ -19,7 +19,11 @@
     align-items: flex-start;
     padding: vars.$p-6 vars.$p-8 vars.$p-5 vars.$p-8;
 
-    //***Media Querie***
+    //***Media Queries***
+    @include mixins.respond-to(vars.$tablet-landscape){
+        padding: vars.$p-4 vars.$p-3 vars.$p-5 vars.$p-3;
+    }
+
     @include mixins.respond-to(vars.$phone){
         padding: vars.$p-4 0 vars.$p-5 0;
     }
@@ -29,7 +33,11 @@
     @include mixins.set-font(vars.$fs-big, vars.$fw-sem, vars.$red);
     margin-bottom: vars.$m-3;
 
-    //***Media Querie***
+    //***Media Queries***
+    @include mixins.respond-to(vars.$tablet-landscape){
+        margin: vars.$m-4 + vars.$m-2 0 vars.$m-2 vars.$m-3;
+    }
+
     @include mixins.respond-to(vars.$phone){
         @include mixins.set-font(vars.$fs-sm, vars.$fw-sem, vars.$red);
         margin: vars.$m-4 0 vars.$m-2 vars.$m-3;

@@ -37,8 +37,8 @@
     @include mixins.respond-to(vars.$large-desktop){
         margin-left: vars.$m-5;
     }
-
-    @include mixins.respond-to(vars.$phone){
+    
+    @include mixins.respond-to(vars.$tablet-landscape){
         @include mixins.row();
         flex-direction: column;
         justify-items: center;
@@ -80,10 +80,14 @@
         @include mixins.set-font(vars.$fs-xxsm, vars.$fw-med, vars.$white);
     }
 
+    @include mixins.respond-to(vars.$tablet-landscape){
+        max-width: 90%;
+        text-align: justify;
+    }
+
     @include mixins.respond-to(vars.$phone){
         @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-med, vars.$white);
         max-width: 80%;
-        text-align: justify;
     }
 }
 
@@ -95,6 +99,10 @@
     padding: 0 vars.$p-7 vars.$p-5 vars.$p-7 ;
 
     //***Media Querie***
+    @include mixins.respond-to(vars.$tablet-landscape){
+        padding: 0 vars.$p-3 vars.$p-3 vars.$p-3;
+    }
+
     @include mixins.respond-to(vars.$phone){
         padding: 0 0 vars.$p-3 0;
     }

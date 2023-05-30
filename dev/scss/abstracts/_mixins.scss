@@ -61,6 +61,16 @@
 }
 
 //Este mixin ayuda a definir reglas de estilo a elementos que se desplieguen como un card
+@mixin set-glassmor($br : vars.$r-2, $bg-color : vars.$white){
+    background: $bg-color;
+    box-shadow: 0 8px 32px 0 vars.$black;
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: $br;
+    border: 1px solid vars.$trans-N1;
+}
+
+//Este mixin ayuda a definir reglas de estilo a elementos que se desplieguen como un card
 @mixin set-card-shape($br : vars.$r-2, $bg-color : vars.$white, $opacity : 0){
     background: $bg-color;
     border-radius: $br;
@@ -75,7 +85,7 @@
 }
 
 //Este mixin ayuda a definir una transformación de un elemento en el eje Y
-@mixin set-transformY($distance : 53rem){
+@mixin set-transformY($distance : 54rem){
     transform: translateY($distance);
 }
 
