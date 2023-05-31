@@ -16,7 +16,7 @@ app.component('recipe-details', {
            category: "", 
            description: "", 
            ingredients:[], 
-           instructions:"", 
+           instructions:[], 
            likes: 12,
            recipe: "",
            
@@ -38,6 +38,7 @@ app.component('recipe-details', {
         .then(
             (response) => {
                 let item = response.data.meals;
+                let inst = " ";
                 console.log(item);
 
                 for (let i = 1; i <= 20; i++) {
@@ -46,6 +47,17 @@ app.component('recipe-details', {
                             ingredient: item[0]["strMeasure"+i] + " - " + item[0]["strIngredient"+i]
                         });
                     }
+                }
+
+                for (var i = 0; i < item[0].strInstructions.length; i++) {
+                     inst += item[0].strInstructions[i];
+                     if(item[0].strInstructions[i] === "."){
+                        this.instructions.push({
+                            instruction: inst
+                        });
+                        
+                        inst = "";
+                     }
                 }
 
                 
@@ -60,10 +72,9 @@ app.component('recipe-details', {
                 this.occasion = "All";
                 this.category = item[0].strCategory;
                 this.description = "No description for now";
-                this.instructions = "No instructions for now";
                 this.likes = 12;
-                    
                 console.log(this.ingredients);
+                console.log(this.instructions);
                 this.getRelated();
             }
         )
@@ -165,13 +176,13 @@ app.component('recipe-details', {
                 <div class="requirements-container">
                     <h3 class="requirement-title">Ingredients</h3>
                     <ul class="requirement-list">
-                        <li v-for="li in ingredients" class="requirement-list"> {{li.ingredient}} </li>
+                        <li v-for="ing in ingredients" class="requirement-list"> {{ing.ingredient}} </li>
                     </ul>
                 </div>
                 <div class="requirements-container">
                     <h3 class="requirement-title">Instructions</h3>
                     <ul class="requirement-list">
-                        <li class="requirement-list"> {{instructions}} </li>
+                        <li v-for="ing in instructions" class="requirement-list"> {{ing.instruction}} </li>
                     </ul>
                 </div>
             </div>
