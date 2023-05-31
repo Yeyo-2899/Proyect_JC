@@ -13,8 +13,15 @@ app.component('nav-header', {
         profile:  "",
         modal_login: "",
         modal_signup: "",
+        modal_recovery: "",
+        modal_edit: "",
         header: "",
-        headerModal: ""
+        headerModalLog: "",
+        headerModalSig: "",
+        headerModalRec: "",
+        headerModalEdit: "",
+
+        categories:[{id: 1, name: "Seafood"}]
         }
     },
     mounted:function() {
@@ -25,7 +32,12 @@ app.component('nav-header', {
         this.profile =  document.querySelector('.user-profile'),
         this.modal_login = document.querySelector('#modal-login'),
         this.modal_signup = document.querySelector('#modal-signup'),
-        this.headerModal = document.querySelector('.modal-header')
+        this.modal_recovery = document.querySelector('#modal-recovery'),
+        this.modal_edit = document.querySelector('#modal-edit'),
+        this.headerModalLog = document.querySelector('#modal-header-login'),
+        this.headerModalSig = document.querySelector('#modal-header-signin'),
+        this.headerModalRec = document.querySelector('#modal-header-recovery'),
+        this.headerModalEdit = document.querySelector('#modal-header-edit')
 
         this.scrollP();
         this.menuDrop();
@@ -38,7 +50,34 @@ app.component('nav-header', {
         this.navItems();
         this.logOut();
         this.signUp();
+        this.recover();
         this.logIn();
+        this.logInRecover();
+        this.modifyProfile();
+        this.editExit();
+
+
+        axios({  
+            method: 'get', 
+            url:'https://www.themealdb.com/api/json/v1/1/categories.php'
+        })
+        .then(
+            (response) => {
+                let items = response.data.categories;
+
+                this.categories = [];
+
+                items.forEach(element =>{
+                    this.categories.push({
+                        id: element.idCategory,
+                        name:element.strCategory
+                    });
+                });
+            }
+        )
+        .catch(
+            error => console.log(error)
+        );
     },
     methods: {
         scrollP(){
@@ -85,10 +124,24 @@ app.component('nav-header', {
             }
         },
         skip(){
-            document.querySelector('#skip-btn').onclick = () =>{
+            document.querySelector('#skip-btn-login').onclick = () =>{
                 this.modal_login.classList.remove('active');
+                this.headerModalLog.classList.remove('active');
+            }
+
+            document.querySelector('#skip-btn-signin').onclick = () =>{
                 this.modal_signup.classList.remove('active');
-                this.headerModal.classList.remove('active');
+                this.headerModalSig.classList.remove('active');
+            }
+
+            document.querySelector('#skip-btn-recovery').onclick = () =>{
+                this.modal_recovery.classList.remove('active');
+                this.headerModalRec.classList.remove('active');
+            }
+
+            document.querySelector('#skip-btn-edit').onclick = () =>{
+                this.modal_edit.classList.remove('active');
+                this.headerModalEdit.classList.remove('active');
             }
         },
         filterDrop(){
@@ -99,12 +152,10 @@ app.component('nav-header', {
         },
         search(){
             document.querySelector('#search-btn').onclick = () =>{
-                let inputWord = document.getElementById("search-input");
+                let inputWord = document.getElementById('search-input');
                 let keyword = inputWord.value;
-
-                window.location.href = "./recipe-book.html"; //DUDA
-                
-                //this.filters.classList.remove('active');
+                console.log(keyword);
+                window.location.href = "./recipe-book.html?keyword="+keyword; //DUDA
             }
         },
         navItems(){
@@ -114,29 +165,57 @@ app.component('nav-header', {
                 }
             }
         },
-        logOut(){
+        logOut(){ //Cambiar a futuro, no puede comenzar ya logueado
             document.querySelector('#logout-btn').onclick = () =>{
+                console.log(this.headerModalLog);
                 this.modal_login.classList.toggle('active');
-                this.headerModal.classList.toggle('active');
+                this.headerModalLog.classList.toggle('active');
                 this.useroptions.classList.remove('active');
                 this.profile.classList.remove('active');
-                this.navbar.classList.remove('active');
-                this.filters.classList.remove('active');
-                this.searchForm.classList.remove('active');
             }
         },
         signUp(){
             document.querySelector('#signup-btn').onclick = () =>{
                 this.modal_signup.classList.toggle('active');
-                this.headerModal.classList.toggle('active');
+                this.headerModalSig.classList.toggle('active');
                 this.modal_login.classList.remove('active');
+                this.headerModalLog.classList.remove('active');
+            }
+        },
+        recover(){
+            document.querySelector('#recover-btn').onclick = () =>{
+                this.modal_recovery.classList.toggle('active');
+                this.headerModalRec.classList.toggle('active');
+                this.modal_login.classList.remove('active');
+                this.headerModalLog.classList.remove('active');
             }
         },
         logIn(){
             document.querySelector('#login-btn').onclick = () =>{
                 this.modal_login.classList.toggle('active');
-                this.headerModal.classList.toggle('active');
+                this.headerModalLog.classList.toggle('active');
                 this.modal_signup.classList.remove('active');
+                this.headerModalSig.classList.remove('active');
+            }
+        },
+        logInRecover(){
+            document.querySelector('#recovery-btn').onclick = () =>{
+                this.modal_login.classList.toggle('active');
+                this.headerModalLog.classList.toggle('active');
+                this.modal_recovery.classList.remove('active');
+                this.headerModalRec.classList.remove('active');
+            }
+        },
+        modifyProfile(){
+            document.querySelector('#edit-btn').onclick = () =>{
+                this.modal_edit.classList.toggle('active');
+                this.headerModalEdit.classList.toggle('active');
+            }
+        },
+        editExit(){
+            document.querySelector('#keep-btn').onclick = () =>{
+                this.modal_edit.classList.remove('active');
+                this.headerModalEdit.classList.remove('active');
             }
         }
         
@@ -167,16 +246,22 @@ app.component('nav-header', {
 
             <!--Search Bar-->
             <div class="nav-search">
-                <form class="search-form" action="" role="search">
+                <form class="search-form" onsubmit="return false;" role="search">
                     <input class="search-input" type="search" id="search-input" placeholder="Search..." aria-label="Search">
                     <div class="search-icons">
                         <label id="filter-btn" class="search-btn fa-solid fa-filter"></label> <!--Fue necesrio cambiar esta etiqueta de button a label ya que al estar dentro de un form actualizaba la página env ez de desplegar los filtros-->
-                        <button id="search-btn" for="search-box" class="search-btn fa-solid fa-search" type="submit"></button>
+                        <button id="search-btn" for="search-box" class="search-btn fa-solid fa-search"></button>
                     </div>
                 </form>
 
                 <div class="filter-box">
-                        <h3 class="filter-title">Complexity</h3>
+                        <h3 class="filter-title">Categories</h3>
+                        <ul class="filter-list">
+                            <li v-for="category in categories" class="filter-list-item"><a :href="'./recipe-book.html?name='+category.name" class="filter">{{ category.name }}</a></li>
+                        </ul>
+
+                        <!--********ESTA ES LA ESTRUCUTRA ORIGINAL DE FILTROS, PERO POR AHORA USAREMOS UNA PROVICIONAL********-->
+                        <!--<h3 class="filter-title">Complexity</h3>
                         <ul class="filter-list">
                             <li class="filter-list-item"><a href="" class="filter">Easy</a></li>
                             <li class="filter-list-item"><a href="" class="filter">Intermediate</a></li>
@@ -201,7 +286,7 @@ app.component('nav-header', {
                             <li class="filter-list-item"><a href="" class="filter">Christmas</a></li>
                             <li class="filter-list-item"><a href="" class="filter">Easter</a></li>
                             <li class="filter-list-item"><a href="" class="filter">Summer</a></li>
-                        </ul>
+                        </ul>-->
                 </div>
             </div>
 
@@ -210,7 +295,7 @@ app.component('nav-header', {
                 <div class="options">
                     <div class="options-list">
                         <button id="profile-btn" class="user-btn"><p class="option-icon fa-solid fa-user"></p><p class="user-option">My Profile</p></button>
-                        <button id="collection-btn" class="user-btn"><p class="option-icon fa-solid fa-book"></p><p class="user-option">My Collection</p></button>
+                        <a id="collection-btn" href="./recipe-book.html" class="user-btn"><p class="option-icon fa-solid fa-book"></p><p class="user-option">My Collection</p></a>
                         <button id="logout-btn" class="user-btn"><p class="option-icon fa-solid fa-right-from-bracket"></p><p class="user-option">Log Out</p></button>
                     </div>
                 </div>

@@ -104,11 +104,14 @@
 
 .alternative-container{
     @include mixins.row();
+    flex-direction: column;
     justify-content: center;
+    margin: vars.$m-3 0 0 0;
 }
 
 .alternative-text{
     @include mixins.set-font(vars.$fs-xxxsm, vars.$fw-sem, vars.$white);
-    margin: vars.$m-3 0 0 0;
+    margin: 0;
+    margin-bottom: vars.$m-2;
 }
 

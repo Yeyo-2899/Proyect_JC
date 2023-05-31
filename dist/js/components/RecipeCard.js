@@ -13,38 +13,104 @@ app.component('recipe-card', {
         }
     },
     mounted:function() {
-
+        const params = window.location.search;
+	    const urlParams = new URLSearchParams(params);
     
-        axios({  
-            method: 'get', 
-            url:'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
-        })
-        .then(
-            (response) => {
-                let items = response.data.meals;
-
-                this.recipes = [];
-
-                items.forEach(element =>{
-                    this.recipes.push({
-                        id: element.idMeal,
-                        name:element.strMeal,
-                        image:element.strMealThumb,
-                        total_time: "20 mins",
-                        category: element.strCategory,
-                        description: "No description for now",
-                        likes: 18
+        if(urlParams.get("keyword") != null){
+            const keyword = urlParams.get("keyword");
+            
+            axios({  
+                method: 'get', 
+                url:'https://www.themealdb.com/api/json/v1/1/search.php?s=' + keyword
+            })
+            .then(
+                (response) => {
+                    console.log('Hubo respuesta');
+                    let items = response.data.meals;
+    
+                    this.recipes = [];
+    
+                    items.forEach(element =>{
+                        this.recipes.push({
+                            id: element.idMeal,
+                            name:element.strMeal,
+                            image:element.strMealThumb,
+                            total_time: "20 mins",
+                            category: element.strCategory,
+                            description: "No description for now",
+                            likes: 18
+                        });
                     });
-                });
+                }
+            )
+            .catch(
+                error => console.log(error)
+            );
 
-                if(this.popular) this.recipes = this.getMostVoted(this.recipes); 
-                
+        }else if(urlParams.get("name") != null){
+            const category = urlParams.get("name");
 
-            }
-        )
-        .catch(
-            error => console.log(error)
-        );
+            axios({  
+                method: 'get', 
+                url:'https://www.themealdb.com/api/json/v1/1/filter.php?c=' + category
+            })
+            .then(
+                (response) => {
+                    let items = response.data.meals;
+    
+                    this.recipes = [];
+    
+                    items.forEach(element =>{
+                        this.recipes.push({
+                            id: element.idMeal,
+                            name:element.strMeal,
+                            image:element.strMealThumb,
+                            total_time: "20 mins",
+                            category: element.strCategory,
+                            description: "No description for now",
+                            likes: 18
+                        });
+                    });
+                }
+            )
+            .catch(
+                error => console.log(error)
+            );
+
+        }else{
+            axios({  
+                method: 'get', 
+                url:'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
+            })
+            .then(
+                (response) => {
+                    let items = response.data.meals;
+    
+                    this.recipes = [];
+    
+                    items.forEach(element =>{
+                        this.recipes.push({
+                            id: element.idMeal,
+                            name:element.strMeal,
+                            image:element.strMealThumb,
+                            total_time: "20 mins",
+                            category: element.strCategory,
+                            description: "No description for now",
+                            likes: 18
+                        });
+                    });
+    
+                    if(this.popular) this.recipes = this.getMostVoted(this.recipes); 
+                    
+    
+                }
+            )
+            .catch(
+                error => console.log(error)
+            );
+        }
+
+        
     },
     methods:{
         getMostVoted(items){

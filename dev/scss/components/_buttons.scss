@@ -18,6 +18,8 @@
 
 .user-btn{
     @include mixins.set-mix-button();
+    text-decoration: none;
+    color: vars.$black;
     margin: 0;
     padding: 0;
     &:hover .option-icon{
