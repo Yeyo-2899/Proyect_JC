@@ -32,26 +32,30 @@ app.component('recipe-details', {
 
         axios({
             method: 'get',
-            url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id 
+            url: 'http://prueba-2.test/api/recipes/recipe/' + id 
 
         })
         .then(
             (response) => {
-                let item = response.data.meals;
+                console.log(response.data[2]);
+                let item = response.data[0];
+                let items = response.data[2];
                 let inst = " ";
-                console.log(item);
+                this.relateds = [];
+    
+                    
 
-                for (let i = 1; i <= 20; i++) {
+                /*for (let i = 1; i <= 20; i++) {
                     if(item[0]["strIngredient"+i] !="" && item[0]["strIngredient"+i] !=null){
                         this.ingredients.push({
                             ingredient: item[0]["strMeasure"+i] + " - " + item[0]["strIngredient"+i]
                         });
                     }
-                }
+                }*/
 
-                for (var i = 0; i < item[0].strInstructions.length; i++) {
-                     inst += item[0].strInstructions[i];
-                     if(item[0].strInstructions[i] === "."){
+                for (var i = 0; i < item[0].preparation_instructions.length; i++) {
+                     inst += item[0].preparation_instructions[i];
+                     if(item[0].preparation_instructions[i] === "."){
                         this.instructions.push({
                             instruction: inst
                         });
@@ -61,21 +65,34 @@ app.component('recipe-details', {
                 }
 
                 
-                this.id = item[0].idMeal;
-                this.image = item[0].strMealThumb;
-                this.name = item[0].strMeal;
-                this.prep_time = "20 min";
-                this.cook_time = "30 min";
-                this.total_time = "50 min";
-                this.portions = "5";
-                this.complexity = "Intermediate";
-                this.occasion = "All";
-                this.category = item[0].strCategory;
-                this.description = "No description for now";
-                this.likes = 12;
+                this.id = item[0].id;
+                this.image = item[0].image;
+                this.name = item[0].name;
+                this.prep_time = item[0].preparation_time;
+                this.cook_time = item[0].cooking_time;
+                this.total_time = item[0].total_time;
+                this.portions = item[0].portions;
+                this.complexity = item[0].level;
+                this.occasion = item[0].occasion;
+                this.category = item[0].category;
+                this.description = item[0].description;
+                this.likes = item[0].likes;
                 console.log(this.ingredients);
                 console.log(this.instructions);
-                this.getRelated();
+
+                items.forEach(element =>{
+                    this.relateds.push({
+                        id: element.id,
+                        name:element.name,
+                        image:element.image,
+                        total_time: "20 mins",
+                        category: element.category,
+                        description: element.description,
+                        likes: element.likes
+                    });
+                });
+
+                this.relateds = this.getRelateds(this.relateds);
             }
         )
         .catch(
@@ -88,44 +105,6 @@ app.component('recipe-details', {
     methods: {
         getRelateds(item){
             return item.slice(0,3);
-        },
-        getRelated(){
-            axios({
-                method: 'get',
-                url: "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + this.category 
-    
-            })
-            .then(
-                (response) => {
-                    let items = response.data.meals;
-                    console.log(response);
-                    this.relateds = [];
-    
-                    items.forEach(element =>{
-                        this.relateds.push({
-                            id: element.idMeal,
-                            name:element.strMeal,
-                            image:element.strMealThumb,
-                            total_time: "20 mins",
-                            category: element.strCategory,
-                            description: "No description for now",
-                            likes: 18
-                        });
-                    });
-    
-                    this.relateds = this.getRelateds(this.relateds);
-    
-                    console.log(this.relateds);
-                }
-            )
-            .catch(
-                error => console.log(error)
-            )
-        },
-        vote(){
-            console.log("me escuchan");
-            this.likes++;
-            this.saved = true;
         }
     },
     template:

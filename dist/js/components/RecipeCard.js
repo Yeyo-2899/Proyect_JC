@@ -21,24 +21,25 @@ app.component('recipe-card', {
             
             axios({  
                 method: 'get', 
-                url:'https://www.themealdb.com/api/json/v1/1/search.php?s=' + keyword
+                url:'http://prueba-2.test/api/recipes/searchbyname/' + keyword
             })
             .then(
                 (response) => {
                     console.log('Hubo respuesta');
-                    let items = response.data.meals;
+                    console.log(response);
+                    let items = response.data;
     
                     this.recipes = [];
     
                     items.forEach(element =>{
                         this.recipes.push({
-                            id: element.idMeal,
-                            name:element.strMeal,
-                            image:element.strMealThumb,
+                            id: element.id,
+                            name:element.name,
+                            image:element.image,
                             total_time: "20 mins",
-                            category: element.strCategory,
-                            description: "No description for now",
-                            likes: 18
+                            category: element.category,
+                            description: element.description,
+                            likes: element.likes
                         });
                     });
                 }
@@ -47,30 +48,60 @@ app.component('recipe-card', {
                 error => console.log(error)
             );
 
-        }else if(urlParams.get("name") != null){
-            const category = urlParams.get("name");
+        }else if(urlParams.get("type") != null){
+            const filter = urlParams.get("type");
+            const id = urlParams.get("id");
 
             axios({  
                 method: 'get', 
-                url:'https://www.themealdb.com/api/json/v1/1/filter.php?c=' + category
+                url:'http://prueba-2.test/api/recipes/filterby/'+filter+'/' + id
             })
             .then(
                 (response) => {
-                    let items = response.data.meals;
+                    let items = response.data;
     
                     this.recipes = [];
     
                     items.forEach(element =>{
                         this.recipes.push({
-                            id: element.idMeal,
-                            name:element.strMeal,
-                            image:element.strMealThumb,
+                            id: element.id,
+                            name:element.name,
+                            image:element.image,
                             total_time: "20 mins",
-                            category: element.strCategory,
-                            description: "No description for now",
-                            likes: 18
+                            category: element.category,
+                            description: element.description,
+                            likes: element.likes
                         });
                     });
+                }
+            )
+            .catch(
+                error => console.log(error)
+            );
+        
+        }else if(this.popular){
+            axios({  
+                method: 'get', 
+                url:'http://prueba-2.test/api/recipes/top10'
+            })
+            .then(
+                (response) => {
+                    let items = response.data;
+    
+                    this.recipes = [];
+    
+                    items.forEach(element =>{
+                        this.recipes.push({
+                            id: element.id,
+                            name:element.name,
+                            image:element.image,
+                            total_time: "20 mins",
+                            category: element.category,
+                            description: element.description,
+                            likes: element.likes
+                        });
+                    });
+    
                 }
             )
             .catch(
@@ -80,27 +111,25 @@ app.component('recipe-card', {
         }else{
             axios({  
                 method: 'get', 
-                url:'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
+                url:'http://prueba-2.test/api/recipes/all'
             })
             .then(
                 (response) => {
-                    let items = response.data.meals;
+                    let items = response.data;
     
                     this.recipes = [];
     
                     items.forEach(element =>{
                         this.recipes.push({
-                            id: element.idMeal,
-                            name:element.strMeal,
-                            image:element.strMealThumb,
+                            id: element.id,
+                            name:element.name,
+                            image:element.image,
                             total_time: "20 mins",
-                            category: element.strCategory,
-                            description: "No description for now",
-                            likes: 18
+                            category: element.category,
+                            description: element.description,
+                            likes: element.likes
                         });
                     });
-    
-                    if(this.popular) this.recipes = this.getMostVoted(this.recipes); 
                     
     
                 }
@@ -113,9 +142,6 @@ app.component('recipe-card', {
         
     },
     methods:{
-        getMostVoted(items){
-            return items.slice(0,10);
-        },
         vote(index){
             console.log("me escuchan?");
             for(i in recipes){

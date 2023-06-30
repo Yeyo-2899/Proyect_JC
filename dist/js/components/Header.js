@@ -21,7 +21,9 @@ app.component('nav-header', {
         headerModalRec: "",
         headerModalEdit: "",
 
-        categories:[{id: 1, name: "Seafood"}]
+        categories:[{id: 1, name: "Not for now"}],
+        levels:[{id: 1, name: "Not for now"}],
+        occasions:[{id: 1, name: "Not for now"}]
         }
     },
     mounted:function() {
@@ -57,20 +59,21 @@ app.component('nav-header', {
         this.editExit();
 
 
+        //Categories axios
         axios({  
             method: 'get', 
-            url:'https://www.themealdb.com/api/json/v1/1/categories.php'
+            url:'http://prueba-2.test/api/recipes/categories'
         })
         .then(
             (response) => {
-                let items = response.data.categories;
+                let items = response.data;
 
                 this.categories = [];
 
                 items.forEach(element =>{
                     this.categories.push({
-                        id: element.idCategory,
-                        name:element.strCategory
+                        id: element.id,
+                        name:element.category
                     });
                 });
             }
@@ -78,6 +81,54 @@ app.component('nav-header', {
         .catch(
             error => console.log(error)
         );
+
+        //Levels axios
+        axios({  
+            method: 'get', 
+            url:'http://prueba-2.test/api/recipes/levels'
+        })
+        .then(
+            (response) => {
+                let items = response.data;
+
+                this.levels = [];
+
+                items.forEach(element =>{
+                    this.levels.push({
+                        id: element.id,
+                        name:element.level
+                    });
+                });
+            }
+        )
+        .catch(
+            error => console.log(error)
+        );
+
+        //Occasions axios
+        axios({  
+            method: 'get', 
+            url:'http://prueba-2.test/api/recipes/occasions'
+        })
+        .then(
+            (response) => {
+                let items = response.data;
+
+                this.occasions = [];
+
+                items.forEach(element =>{
+                    this.occasions.push({
+                        id: element.id,
+                        name:element.occasion
+                    });
+                });
+            }
+        )
+        .catch(
+            error => console.log(error)
+        );
+
+
     },
     methods: {
         scrollP(){
@@ -257,7 +308,15 @@ app.component('nav-header', {
                 <div class="filter-box">
                         <h3 class="filter-title">Categories</h3>
                         <ul class="filter-list">
-                            <li v-for="category in categories" class="filter-list-item"><a :href="'./recipe-book.html?name='+category.name" class="filter">{{ category.name }}</a></li>
+                            <li v-for="category in categories" class="filter-list-item"><a :href="'./recipe-book.html?type=category&id='+category.id" class="filter">{{ category.name }}</a></li>
+                        </ul>
+                        <h3 class="filter-title">Levels</h3>
+                        <ul class="filter-list">
+                            <li v-for="level in levels" class="filter-list-item"><a :href="'./recipe-book.html?type=level&id='+level.id" class="filter">{{ level.name }}</a></li>
+                        </ul>
+                        <h3 class="filter-title">Occasions</h3>
+                        <ul class="filter-list">
+                            <li v-for="occasion in occasions" class="filter-list-item"><a :href="'./recipe-book.html?type=occasion&id='+occasion.id" class="filter">{{ occasion.name }}</a></li>
                         </ul>
 
                         <!--********ESTA ES LA ESTRUCUTRA ORIGINAL DE FILTROS, PERO POR AHORA USAREMOS UNA PROVICIONAL********-->
