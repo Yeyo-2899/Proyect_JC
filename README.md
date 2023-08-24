@@ -1,2 +1,2 @@
 # Proyect_JC
-Este repositorio contiene el código del proyecto Just Cook realizado para el curso de Desarrollo de Aplicaciones Interactivas 2.
+This repository contains the code of the Just Cook project made for the Interactive Application Development 2 course.
